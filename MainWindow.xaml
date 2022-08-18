@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Height="400">
+        <Grid.Background>
+            <ImageBrush ImageSource="/ekrankino.jpg"/>
+        </Grid.Background>
+        <Label x:Name="FilotekaTytul" Content="Witamy w Filmotece" HorizontalAlignment="Center" Height="100" Margin="0,277,0,0" VerticalAlignment="Top" Width="708" FontSize="72" FontWeight="Bold" Foreground="#FFD4D0D0"/>
+
     </Grid>
 </Window>
