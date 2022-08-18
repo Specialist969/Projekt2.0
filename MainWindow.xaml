@@ -14,10 +14,20 @@
         <Button x:Name="Filmprzycisk" Content="Film" HorizontalAlignment="Left" Height="69" Margin="10,75,0,0" VerticalAlignment="Top" Width="138" FontSize="48" FontWeight="Bold" Foreground="#FFFCFBFB">
             <Button.Background>
                 <RadialGradientBrush>
-                    <GradientStop Color="Black" Offset="0.036"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FF7E7E7E" Offset="0.578"/>
-                    <GradientStop Color="#FF7D7D7D" Offset="0.576"/>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF050505" Offset="1"/>
+                    <GradientStop Color="#FF080808" Offset="0"/>
+                    <GradientStop Color="#FFF6F2F2" Offset="0"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Serialprzycisk" Content="Serial" HorizontalAlignment="Left" Height="69" Margin="646,75,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFED0505" FontSize="48" FontWeight="Bold">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF0F0F0F" Offset="0"/>
+                    <GradientStop Color="#FFE7E1E1" Offset="0"/>
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
