@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Projekt2._0
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy Film.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Film : Window
     {
-        public MainWindow()
+        public Film()
         {
             InitializeComponent();
-        }
-
-        private void Filmprzycisk_Click(object sender, RoutedEventArgs e)
-        {
-            Film rej = new Film();
-            rej.Show();
-
-            //this.Close();
         }
     }
 }

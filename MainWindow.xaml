@@ -11,7 +11,7 @@
             <ImageBrush ImageSource="/ekrankino.jpg"/>
         </Grid.Background>
         <Label x:Name="FilotekaTytul" Content="Witamy w Filmotece" HorizontalAlignment="Center" Height="100" Margin="0,277,0,0" VerticalAlignment="Top" Width="708" FontSize="72" FontWeight="Bold" Foreground="#FFD4D0D0"/>
-        <Button x:Name="Filmprzycisk" Content="Film" HorizontalAlignment="Left" Height="69" Margin="10,75,0,0" VerticalAlignment="Top" Width="138" FontSize="48" FontWeight="Bold" Foreground="#FFFCFBFB">
+        <Button x:Name="Filmprzycisk" Content="Film" HorizontalAlignment="Left" Height="69" Margin="10,75,0,0" VerticalAlignment="Top" Width="138" FontSize="48" FontWeight="Bold" Foreground="#FFFCFBFB" Click="Filmprzycisk_Click">
             <Button.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Black" Offset="0"/>
