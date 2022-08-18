@@ -31,6 +31,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
+        <Label Content="Co dzisiaj wybierzesz ?" HorizontalAlignment="Center" Height="64" Margin="0,136,0,0" VerticalAlignment="Top" Width="396" FontSize="36" FontWeight="Bold"/>
 
     </Grid>
 </Window>
