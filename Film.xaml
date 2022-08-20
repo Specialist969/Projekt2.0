@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
-        Title="Film" Height="450" Width="800">
-    <Grid>
+        Title="Film" Height="465" Width="785">
+    <Grid Margin="0,0,10,-6">
         <Grid.Background>
             <ImageBrush ImageSource="/kinotło.jpg"/>
         </Grid.Background>
