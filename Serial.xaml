@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="Serial" Height="450" Width="800">
     <Grid>
-        <Label x:Name="TytulSerial" Content="Może jakiś serial ?" HorizontalAlignment="Left" Height="84" Margin="61,45,0,0" VerticalAlignment="Top" Width="401" FontSize="48"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/scianatło.jpg"/>
+        </Grid.Background>
+        <Label x:Name="TytulSerial" Content="Może jakiś serial ?" HorizontalAlignment="Left" Height="84" Margin="144,10,0,0" VerticalAlignment="Top" Width="401" FontSize="48"/>
 
     </Grid>
 </Window>
