@@ -30,7 +30,16 @@ namespace Projekt2._0
             Film rej = new Film();
             rej.Show();
 
-            //this.Close();
+            this.Close();
+        }
+
+        private void Serialprzycisk_Click(object sender, RoutedEventArgs e)
+        {
+            Serial rej = new Serial();
+            rej.Show();
+
+            this.Close();
+
         }
     }
 }

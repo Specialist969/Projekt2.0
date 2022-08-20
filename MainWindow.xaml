@@ -21,7 +21,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="Serialprzycisk" Content="Serial" HorizontalAlignment="Left" Height="69" Margin="646,75,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFED0505" FontSize="48" FontWeight="Bold">
+        <Button x:Name="Serialprzycisk" Content="Serial" HorizontalAlignment="Left" Height="69" Margin="646,75,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFED0505" FontSize="48" FontWeight="Bold" Click="Serialprzycisk_Click">
             <Button.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Black"/>
