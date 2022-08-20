@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="masterFilmoteka.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterFilmoteka.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Serial.xaml.cs">
       <DependentUpon>Serial.xaml</DependentUpon>
     </Compile>
@@ -100,6 +105,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="masterFilmoteka.xsc">
+      <DependentUpon>masterFilmoteka.xsd</DependentUpon>
+    </None>
+    <None Include="masterFilmoteka.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>masterFilmoteka.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="masterFilmoteka.xss">
+      <DependentUpon>masterFilmoteka.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
