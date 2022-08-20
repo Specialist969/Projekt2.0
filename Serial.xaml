@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
-        Title="Serial" Height="477" Width="829">
-    <Grid Margin="0,0,28,12">
+        Title="Serial" Height="477" Width="829" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:masterFilmoteka x:Key="masterFilmoteka"/>
+        <CollectionViewSource x:Key="serialViewSource" Source="{Binding Serial, Source={StaticResource masterFilmoteka}}"/>
+    </Window.Resources>
+    <Grid Margin="0,0,28,12" DataContext="{StaticResource serialViewSource}">
         <Grid.Background>
             <ImageBrush ImageSource="/scianatło.jpg"/>
         </Grid.Background>
         <Label x:Name="TytulSerial" Content="Może jakiś serial ?" HorizontalAlignment="Left" Height="84" Margin="144,10,0,0" VerticalAlignment="Top" Width="420" FontSize="48" FontWeight="Bold"/>
-        <DataGrid HorizontalAlignment="Left" Height="295" Margin="27,115,0,0" VerticalAlignment="Top" Width="588" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid HorizontalAlignment="Left" Height="295" Margin="27,115,0,0" VerticalAlignment="Top" Width="588" ItemsSource="{Binding}"/>
         <Button x:Name="PowrotSerial" Content="Może jednak film ?" HorizontalAlignment="Left" Height="20" Margin="640,404,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Click="PowrotSerial_Click">
             <Button.Background>
                 <ImageBrush/>
