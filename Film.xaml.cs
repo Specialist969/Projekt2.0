@@ -31,5 +31,16 @@ namespace Projekt2._0
 
             this.Close();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            Projekt2._0.masterFilmoteka masterFilmoteka = ((Projekt2._0.masterFilmoteka)(this.FindResource("masterFilmoteka")));
+            // Załaduj dane do tabeli Filmy. Możesz modyfikować ten kod w razie potrzeby.
+            Projekt2._0.masterFilmotekaTableAdapters.FilmyTableAdapter masterFilmotekaFilmyTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.FilmyTableAdapter();
+            masterFilmotekaFilmyTableAdapter.Fill(masterFilmoteka.Filmy);
+            System.Windows.Data.CollectionViewSource filmyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("filmyViewSource")));
+            filmyViewSource.View.MoveCurrentToFirst();
+        }
     }
 }
