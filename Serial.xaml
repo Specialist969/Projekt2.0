@@ -21,7 +21,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="WstawianieSerial" Content="Wutaj możesz dodać nowy serial" HorizontalAlignment="Left" Height="24" Margin="75,415,0,0" VerticalAlignment="Top" Width="366" Click="WstawianieFilm_Click" FontWeight="Bold">
+        <Button x:Name="WstawianieSerial" Content="Tutaj możesz dodać nowy serial " HorizontalAlignment="Left" Height="29" Margin="79,410,0,0" VerticalAlignment="Top" Width="375" FontWeight="Bold" FontSize="18" Click="WstawianieSerial_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
