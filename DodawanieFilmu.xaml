@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
-        Title="DodawanieFilmu" Height="297" Width="1063">
+        Title="DodawanieFilmu" Height="298" Width="1061">
     <Grid Margin="10,10,10,17">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="447*"/>

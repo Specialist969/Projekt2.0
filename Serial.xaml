@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
-        Title="Serial" Height="477" Width="829" Loaded="Window_Loaded">
+        Title="Serial" Height="488" Width="829" Loaded="Window_Loaded">
     <Window.Resources>
         <local:masterFilmoteka x:Key="masterFilmoteka"/>
         <CollectionViewSource x:Key="serialViewSource" Source="{Binding Serial, Source={StaticResource masterFilmoteka}}"/>

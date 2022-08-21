@@ -5,20 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
-        Title="DodawanieSerial" Height="330" Width="1096">
-    <Grid Margin="10,0,10,-16">
+        Title="DodawanieSerial" Height="367" Width="1130">
+    <Grid Margin="10,0,10,-6">
         <Grid.Background>
             <ImageBrush ImageSource="/rolkafilm.jpg"/>
         </Grid.Background>
         <Label x:Name="DodawnieSerialuTytul" Content="Tutaj możesz dodać serial który już oberzałeś albo dopiero zamierzasz " HorizontalAlignment="Left" Height="40" Margin="166,10,0,0" VerticalAlignment="Top" Width="760" FontSize="24"/>
-        <TextBox HorizontalAlignment="Left" Height="42" Margin="602,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="618,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218"/>
         <TextBox HorizontalAlignment="Left" Height="42" Margin="358,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
         <TextBox HorizontalAlignment="Left" Height="42" Margin="101,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
         <Label x:Name="WpiszRezyser" Content="Wpisz Twórcy Serialu" HorizontalAlignment="Left" Height="40" Margin="602,111,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
         <Label x:Name="WpiszPremiera" Content="Wpisz Date Premiery" HorizontalAlignment="Left" Height="40" Margin="358,111,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
         <Label x:Name="WpiszTytuł" Content="Wpisz Tytuł Serialu" HorizontalAlignment="Left" Height="40" Margin="101,111,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
-        <CheckBox x:Name="WpiszObejrzane" Content="Obejrzałeś już ten Serial ?" HorizontalAlignment="Left" Height="42" Margin="842,130,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
+        <CheckBox x:Name="WpiszObejrzane" Content="Obejrzałeś już ten Serial ?" HorizontalAlignment="Left" Height="42" Margin="867,135,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
         <Button x:Name="PowrotSerial" Content="Powrót" HorizontalAlignment="Left" Height="37" Margin="654,267,0,0" VerticalAlignment="Top" Width="389" FontSize="24" Click="PowrotSerial_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="DodajSerial" Content="Dodaj Serial" HorizontalAlignment="Left" Height="36" Margin="76,263,0,0" VerticalAlignment="Top" Width="392" FontSize="24">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
