@@ -42,5 +42,13 @@ namespace Projekt2._0
             System.Windows.Data.CollectionViewSource filmyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("filmyViewSource")));
             filmyViewSource.View.MoveCurrentToFirst();
         }
+
+        private void WstawianieFilm_Click(object sender, RoutedEventArgs e)
+        {
+            DodawanieFilmu rej = new DodawanieFilmu();
+            rej.Show();
+
+            this.Close();
+        }
     }
 }
