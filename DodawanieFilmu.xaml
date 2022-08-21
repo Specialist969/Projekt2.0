@@ -16,14 +16,14 @@
             <ImageBrush ImageSource="/rolkafilm.jpg"/>
         </Grid.Background>
         <Label x:Name="DodawnieFilmuTytul" Content="Tutaj możesz dodać film który już oberzałeś albo dopiero zamierzasz " Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="40" Margin="166,10,0,0" VerticalAlignment="Top" Width="741" FontSize="24"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="42" Margin="116,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" Grid.Column="1"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="42" Margin="339,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
-        <TextBox HorizontalAlignment="Left" Height="42" Margin="101,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="DodajRezyserFilm" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="42" Margin="116,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" Grid.Column="1"/>
+        <TextBox x:Name="DodajPremiereFilm" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="42" Margin="339,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="DodajTytulFilm" HorizontalAlignment="Left" Height="42" Margin="101,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="436,309,0,0" VerticalAlignment="Top"/>
         <Label x:Name="WpiszRezyser" Grid.Column="1" Content="Wpisz Reżysera Filmu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="116,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
         <Label x:Name="WpiszPremiera" Content="Wpisz Date Premiery" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="339,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
         <Label x:Name="WpiszTytuł" Content="Wpisz Tytuł Filmu" HorizontalAlignment="Left" Height="40" Margin="101,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
-        <CheckBox x:Name="WpiszObejrzane" Grid.Column="2" Content="Obejrzałeś już ten Film" HorizontalAlignment="Left" Height="42" Margin="47,104,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
+        <CheckBox x:Name="WpiszObejrzaneFilm" Grid.Column="2" Content="Obejrzałeś już ten Film" HorizontalAlignment="Left" Height="42" Margin="47,104,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
         <Button x:Name="PowrotFilm" Grid.Column="1" Content="Powrót" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="32" Margin="212,196,0,0" VerticalAlignment="Top" Width="357" FontSize="22" Click="PowrotFilm_Click">
             <Button.Background>
                 <ImageBrush/>
