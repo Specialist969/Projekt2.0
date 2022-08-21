@@ -29,6 +29,11 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
+        <Button x:Name="DodajFilm" Content="Dodaj Film" HorizontalAlignment="Left" Height="45" Margin="88,199,0,0" VerticalAlignment="Top" Width="315" FontSize="24">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

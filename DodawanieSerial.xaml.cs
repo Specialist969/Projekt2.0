@@ -31,5 +31,7 @@ namespace Projekt2._0
 
             this.Close();
         }
+
+        
     }
 }
