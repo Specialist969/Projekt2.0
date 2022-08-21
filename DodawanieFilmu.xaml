@@ -23,6 +23,12 @@
         <Label x:Name="WpiszRezyser" Grid.Column="1" Content="Wpisz Reżysera Filmu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="116,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
         <Label x:Name="WpiszPremiera" Content="Wpisz Date Premiery" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="339,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
         <Label x:Name="WpiszTytuł" Content="Wpisz Tytuł Filmu" HorizontalAlignment="Left" Height="40" Margin="101,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
+        <CheckBox x:Name="WpiszObejrzane" Grid.Column="2" Content="Obejrzałeś już ten Film" HorizontalAlignment="Left" Height="42" Margin="47,104,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
+        <Button x:Name="PowrotFilm" Grid.Column="1" Content="Powrót" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="32" Margin="213,212,0,0" VerticalAlignment="Top" Width="357" FontSize="22" Click="PowrotFilm_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

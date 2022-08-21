@@ -23,5 +23,13 @@ namespace Projekt2._0
         {
             InitializeComponent();
         }
+
+        private void PowrotFilm_Click(object sender, RoutedEventArgs e)
+        {
+            Film rej = new Film();
+            rej.Show();
+
+            this.Close();
+        }
     }
 }
