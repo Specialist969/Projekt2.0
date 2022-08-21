@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
-        Title="DodawanieFilmu" Height="450" Width="800">
-    <Grid>
-        
+        Title="DodawanieFilmu" Height="297" Width="1063">
+    <Grid Margin="10,10,10,17">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="447*"/>
+            <ColumnDefinition Width="298*"/>
+            <ColumnDefinition Width="262*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/rolkafilm.jpg"/>
+        </Grid.Background>
+
     </Grid>
 </Window>
