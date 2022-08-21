@@ -42,5 +42,13 @@ namespace Projekt2._0
             System.Windows.Data.CollectionViewSource serialViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("serialViewSource")));
             serialViewSource.View.MoveCurrentToFirst();
         }
+
+        private void WstawianieSerial_Click(object sender, RoutedEventArgs e)
+        {
+            DodawanieSerial rej = new DodawanieSerial();
+            rej.Show();
+
+            this.Close();
+        }
     }
 }

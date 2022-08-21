@@ -6,16 +6,19 @@
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
         Title="DodawanieSerial" Height="330" Width="1096">
-    <Grid Margin="10,0,10,20">
-        <Label x:Name="DodawnieFilmuTytul" Content="Tutaj możesz dodać film który już oberzałeś albo dopiero zamierzasz " HorizontalAlignment="Left" Height="40" Margin="166,10,0,0" VerticalAlignment="Top" Width="741" FontSize="24"/>
-        <TextBox HorizontalAlignment="Left" Height="42" Margin="579,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
-        <TextBox HorizontalAlignment="Left" Height="42" Margin="339,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
-        <TextBox HorizontalAlignment="Left" Height="42" Margin="101,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
-        <Label x:Name="WpiszRezyser" Content="Wpisz Reżysera Filmu" HorizontalAlignment="Left" Height="40" Margin="579,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
-        <Label x:Name="WpiszPremiera" Content="Wpisz Date Premiery" HorizontalAlignment="Left" Height="40" Margin="339,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
-        <Label x:Name="WpiszTytuł" Content="Wpisz Tytuł Filmu" HorizontalAlignment="Left" Height="40" Margin="101,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
-        <CheckBox x:Name="WpiszObejrzane" Content="Obejrzałeś już ten Film" HorizontalAlignment="Left" Height="42" Margin="819,104,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
-        <Button x:Name="PowrotFilm" Content="Powrót" HorizontalAlignment="Left" Height="32" Margin="676,212,0,0" VerticalAlignment="Top" Width="357" FontSize="22" Click="PowrotFilm_Click" RenderTransformOrigin="0.5,0.5">
+    <Grid Margin="10,0,10,-16">
+        <Grid.Background>
+            <ImageBrush ImageSource="/rolkafilm.jpg"/>
+        </Grid.Background>
+        <Label x:Name="DodawnieSerialuTytul" Content="Tutaj możesz dodać serial który już oberzałeś albo dopiero zamierzasz " HorizontalAlignment="Left" Height="40" Margin="166,10,0,0" VerticalAlignment="Top" Width="760" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="602,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="358,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="101,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <Label x:Name="WpiszRezyser" Content="Wpisz Twórcy Serialu" HorizontalAlignment="Left" Height="40" Margin="602,111,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
+        <Label x:Name="WpiszPremiera" Content="Wpisz Date Premiery" HorizontalAlignment="Left" Height="40" Margin="358,111,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
+        <Label x:Name="WpiszTytuł" Content="Wpisz Tytuł Serialu" HorizontalAlignment="Left" Height="40" Margin="101,111,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
+        <CheckBox x:Name="WpiszObejrzane" Content="Obejrzałeś już ten Serial ?" HorizontalAlignment="Left" Height="42" Margin="842,130,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
+        <Button x:Name="PowrotFilm" Content="Powrót" HorizontalAlignment="Left" Height="32" Margin="704,262,0,0" VerticalAlignment="Top" Width="357" FontSize="22" Click="PowrotFilm_Click" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
