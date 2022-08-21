@@ -1,0 +1,33 @@
+﻿<Window x:Class="Projekt2._0.DodawanieSerial"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt2._0"
+        mc:Ignorable="d"
+        Title="DodawanieSerial" Height="330" Width="1096">
+    <Grid Margin="10,0,10,20">
+        <Label x:Name="DodawnieFilmuTytul" Content="Tutaj możesz dodać film który już oberzałeś albo dopiero zamierzasz " HorizontalAlignment="Left" Height="40" Margin="166,10,0,0" VerticalAlignment="Top" Width="741" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="579,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="339,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="101,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <Label x:Name="WpiszRezyser" Content="Wpisz Reżysera Filmu" HorizontalAlignment="Left" Height="40" Margin="579,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
+        <Label x:Name="WpiszPremiera" Content="Wpisz Date Premiery" HorizontalAlignment="Left" Height="40" Margin="339,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
+        <Label x:Name="WpiszTytuł" Content="Wpisz Tytuł Filmu" HorizontalAlignment="Left" Height="40" Margin="101,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
+        <CheckBox x:Name="WpiszObejrzane" Content="Obejrzałeś już ten Film" HorizontalAlignment="Left" Height="42" Margin="819,104,0,0" VerticalAlignment="Top" Width="224" FontSize="18"/>
+        <Button x:Name="PowrotFilm" Content="Powrót" HorizontalAlignment="Left" Height="32" Margin="676,212,0,0" VerticalAlignment="Top" Width="357" FontSize="22" Click="PowrotFilm_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.089"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

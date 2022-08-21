@@ -58,6 +58,9 @@
     <Compile Include="DodawanieFilmu.xaml.cs">
       <DependentUpon>DodawanieFilmu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodawanieSerial.xaml.cs">
+      <DependentUpon>DodawanieSerial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="masterFilmoteka.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,6 +70,10 @@
       <DependentUpon>Serial.xaml</DependentUpon>
     </Compile>
     <Page Include="DodawanieFilmu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodawanieSerial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
