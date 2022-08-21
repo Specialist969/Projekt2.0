@@ -15,6 +15,11 @@
         <Grid.Background>
             <ImageBrush ImageSource="/rolkafilm.jpg"/>
         </Grid.Background>
+        <Label x:Name="DodawnieFilmuTytul" Content="Tutaj możesz dodać film który już oberzałeś albo dopiero zamierzasz " Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="40" Margin="166,10,0,0" VerticalAlignment="Top" Width="741" FontSize="24"/>
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="42" Margin="116,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="219" Grid.Column="1"/>
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="42" Margin="339,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="219"/>
+        <TextBox HorizontalAlignment="Left" Height="42" Margin="101,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="219"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="436,309,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
