@@ -23,5 +23,13 @@ namespace Projekt2._0
         {
             InitializeComponent();
         }
+
+        private void PowrotSerial_Click(object sender, RoutedEventArgs e)
+        {
+            Serial rej = new Serial();
+            rej.Show();
+
+            this.Close();
+        }
     }
 }
