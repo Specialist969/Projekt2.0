@@ -32,6 +32,9 @@ namespace Projekt2._0
             this.Close();
         }
 
-        
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
