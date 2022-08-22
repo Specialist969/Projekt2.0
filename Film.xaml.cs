@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -55,7 +56,9 @@ namespace Projekt2._0
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string connectionString = ""
+            string connectionString = "SERVER=localhost;DATABASE=master;UID=root;PASSWORD=";
+
+            MySqlConnection connection =  
 
             //SqlConnection sql = new SqlConnection();
             //sql.ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
