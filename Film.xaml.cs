@@ -26,7 +26,7 @@ namespace Projekt2._0
         {
             InitializeComponent();
 
-            string connectionString = "SERVER=localhost;DATABASE=master;UID=root;PASSWORD=";
+            string connectionString = "SERVER=(localdb)\\Local;DATABASE=master;USER ID=PAWEŁ\\pawel;PASSWORD=";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
