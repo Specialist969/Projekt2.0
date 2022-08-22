@@ -15,7 +15,7 @@
             <ImageBrush ImageSource="/scianatło.jpg"/>
         </Grid.Background>
         <Label x:Name="TytulSerial" Content="Może jakiś serial ?" HorizontalAlignment="Left" Height="84" Margin="144,10,0,0" VerticalAlignment="Top" Width="420" FontSize="48" FontWeight="Bold"/>
-        <DataGrid HorizontalAlignment="Left" Height="295" Margin="27,115,0,0" VerticalAlignment="Top" Width="588" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="TabelaSerial" HorizontalAlignment="Left" Height="295" Margin="27,115,0,0" VerticalAlignment="Top" Width="588" ItemsSource="{Binding}"/>
         <Button x:Name="PowrotSerial" Content="Może jednak film ?" HorizontalAlignment="Left" Height="20" Margin="640,404,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Click="PowrotSerial_Click">
             <Button.Background>
                 <ImageBrush/>

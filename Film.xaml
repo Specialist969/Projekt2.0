@@ -15,9 +15,9 @@
             <ImageBrush ImageSource="/kinotło.jpg"/>
         </Grid.Background>
         <Label x:Name="FilmyTytul" Content="Filmy do obejrzenia" HorizontalAlignment="Center" Height="121" Margin="0,42,0,0" VerticalAlignment="Top" Width="716" FontSize="72" FontWeight="Bold" Foreground="Black"/>
-        <DataGrid HorizontalAlignment="Left" Height="217" Margin="42,168,0,0" VerticalAlignment="Top" Width="473" ItemsSource="{Binding}" SelectionChanged="DataGrid_SelectionChanged"/>
+        <DataGrid x:Name="TabelaFilm" HorizontalAlignment="Left" Height="217" Margin="42,168,0,0" VerticalAlignment="Top" Width="473" ItemsSource="{Binding}" SelectionChanged="TabelaFilm_SelectionChanged"/>
         <Button x:Name="PowrótFilm" Content="Jednak może serial ?" HorizontalAlignment="Left" Height="19" Margin="571,405,0,0" VerticalAlignment="Top" Width="155" Foreground="#FFFEF9F9" Background="#FF0B0A0A" Click="PowrótFilm_Click"/>
-        <Button x:Name="WstawianieFilm" Content="Tutaj możesz dodać nowy film " HorizontalAlignment="Left" Height="24" Margin="96,390,0,0" VerticalAlignment="Top" Width="365" Click="WstawianieFilm_Click"/>
+        <Button x:Name="WstawianieFilm" Content="Wutaj możesz dodać nowy film " HorizontalAlignment="Left" Height="24" Margin="96,390,0,0" VerticalAlignment="Top" Width="365" Click="WstawianieFilm_Click"/>
 
     </Grid>
 </Window>
