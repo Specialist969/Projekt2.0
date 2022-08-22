@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -54,14 +55,24 @@ namespace Projekt2._0
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SqlConnection sql = new SqlConnection();
-            sql.ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = ""
 
-            SqlCommand cmd = sql.CreateCommand();
+            //SqlConnection sql = new SqlConnection();
+            //sql.ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-            cmd.Connection = sql;
+            //SqlCommand cmd = sql.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM Filmy";
+            //cmd.Connection = sql;
+
+            //cmd.CommandText = "SELECT * FROM Filmy";
+
+            //DataTable data = new DataTable();
+
+            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+            //adapter.Fill(data);
+
+            //DataGrid.DataSourse = data;
         }
     }
 }
