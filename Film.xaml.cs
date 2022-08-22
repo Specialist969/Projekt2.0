@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,12 +36,12 @@ namespace Projekt2._0
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            Projekt2._0.masterFilmoteka masterFilmoteka = ((Projekt2._0.masterFilmoteka)(this.FindResource("masterFilmoteka")));
-            // Załaduj dane do tabeli Filmy. Możesz modyfikować ten kod w razie potrzeby.
-            Projekt2._0.masterFilmotekaTableAdapters.FilmyTableAdapter masterFilmotekaFilmyTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.FilmyTableAdapter();
-            masterFilmotekaFilmyTableAdapter.Fill(masterFilmoteka.Filmy);
-            System.Windows.Data.CollectionViewSource filmyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("filmyViewSource")));
-            filmyViewSource.View.MoveCurrentToFirst();
+            //Projekt2._0.masterFilmoteka masterFilmoteka = ((Projekt2._0.masterFilmoteka)(this.FindResource("masterFilmoteka")));
+            //// Załaduj dane do tabeli Filmy. Możesz modyfikować ten kod w razie potrzeby.
+            //Projekt2._0.masterFilmotekaTableAdapters.FilmyTableAdapter masterFilmotekaFilmyTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.FilmyTableAdapter();
+            //masterFilmotekaFilmyTableAdapter.Fill(masterFilmoteka.Filmy);
+            //System.Windows.Data.CollectionViewSource filmyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("filmyViewSource")));
+            //filmyViewSource.View.MoveCurrentToFirst();
         }
 
         private void WstawianieFilm_Click(object sender, RoutedEventArgs e)
@@ -49,6 +50,18 @@ namespace Projekt2._0
             rej.Show();
 
             this.Close();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SqlConnection sql = new SqlConnection();
+            sql.ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            SqlCommand cmd = sql.CreateCommand();
+
+            cmd.Connection = sql;
+
+            cmd.CommandText = "SELECT * FROM Filmy";
         }
     }
 }

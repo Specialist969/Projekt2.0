@@ -11,7 +11,6 @@
             <ImageBrush ImageSource="/rolkafilm.jpg"/>
         </Grid.Background>
         <Label x:Name="DodawnieSerialuTytul" Content="Tutaj możesz dodać serial który już oberzałeś albo dopiero zamierzasz " HorizontalAlignment="Left" Height="40" Margin="166,10,0,0" VerticalAlignment="Top" Width="760" FontSize="24"/>
-        <TextBox x:Name="DodajPremiereSerial" HorizontalAlignment="Left" Height="42" Margin="341,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="DodajTytulSerial" HorizontalAlignment="Left" Height="42" Margin="101,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
         <Label x:Name="WpiszRezyser" Content="Wpisz Twórcy Serialu" HorizontalAlignment="Left" Height="40" Margin="577,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
         <Label x:Name="WpiszPremiera" Content="Wpisz Date Premiery" HorizontalAlignment="Left" Height="40" Margin="341,82,0,0" VerticalAlignment="Top" Width="219" FontSize="22"/>
@@ -27,7 +26,8 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <TextBox x:Name="DodajTworceSerial" HorizontalAlignment="Left" Height="42" Margin="577,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="DodajPremiereSerial" Content="Button" HorizontalAlignment="Left" Height="40" Margin="341,130,0,0" VerticalAlignment="Top" Width="219"/>
+        <Button x:Name="DodajTworceSerial" Content="Button" HorizontalAlignment="Left" Height="40" Margin="577,130,0,0" VerticalAlignment="Top" Width="219"/>
 
     </Grid>
 </Window>
