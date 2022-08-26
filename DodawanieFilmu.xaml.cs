@@ -22,14 +22,14 @@ namespace Projekt2._0
     {
         public DodawanieFilmu()
         {
-            SqlConnection sql = new SqlConnection();
-            sql.ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //SqlConnection sql = new SqlConnection();
+            //sql.ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-            SqlCommand cmd = sql.CreateCommand();
+            //SqlCommand cmd = sql.CreateCommand();
 
-            cmd.Connection = sql;
+            //cmd.Connection = sql;
 
-            cmd.CommandText = "SELECT * FROM Filmy";
+            //cmd.CommandText = "SELECT * FROM Filmy";
 
         }
 

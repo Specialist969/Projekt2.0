@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,21 @@ namespace Projekt2._0
     {
         public Film()
         {
-            InitializeComponent();
+            SqlConnection sqlConnection = new SqlConnection("Server=.\\Local;Database=master;Integrated Security=true");
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT Filmy",sqlConnection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while ( reader.Read() )
+            {
+                Console.WriteLine("(1) , (0) " , reader.GetString(0), reader.GetString(1));
+            }
+            reader.Close();
+            sqlConnection.Close();
+
+            if (Debugger.IsAttached)
+            {
+                Console.ReadLine();
+            }
         }
 
         private void PowrótFilm_Click(object sender, RoutedEventArgs e)
