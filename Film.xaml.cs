@@ -25,7 +25,6 @@ namespace Projekt2._0
         public Film()
         {
             InitializeComponent();
-
         }
 
         private void PowrótFilm_Click(object sender, RoutedEventArgs e)
