@@ -26,8 +26,8 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="DodajPremiereSerial" Content="Button" HorizontalAlignment="Left" Height="40" Margin="341,130,0,0" VerticalAlignment="Top" Width="219"/>
-        <Button x:Name="DodajTworceSerial" Content="Button" HorizontalAlignment="Left" Height="40" Margin="577,130,0,0" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="DodajTworceSerial" HorizontalAlignment="Left" Height="40" Margin="577,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="DodajPremiereSerial" HorizontalAlignment="Left" Height="40" Margin="341,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"/>
 
     </Grid>
 </Window>
