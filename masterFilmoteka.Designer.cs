@@ -34,16 +34,6 @@ namespace Projekt2._0 {
         
         private FilmyDataTable tableFilmy;
         
-        private global::System.Data.DataRelation relationFK__Serial__ReżyserI__2882FE7D;
-        
-        private global::System.Data.DataRelation relationFK__Serial__StatusId__297722B6;
-        
-        private global::System.Data.DataRelation relationFK__Serial__ReżyserI__5090EFD7;
-        
-        private global::System.Data.DataRelation relationFK__Filmy__ReżyserId__4CC05EF3;
-        
-        private global::System.Data.DataRelation relationFK__Filmy__StatusId__4DB4832C;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -300,11 +290,6 @@ namespace Projekt2._0 {
                     this.tableFilmy.InitVars();
                 }
             }
-            this.relationFK__Serial__ReżyserI__2882FE7D = this.Relations["FK__Serial__ReżyserI__2882FE7D"];
-            this.relationFK__Serial__StatusId__297722B6 = this.Relations["FK__Serial__StatusId__297722B6"];
-            this.relationFK__Serial__ReżyserI__5090EFD7 = this.Relations["FK__Serial__ReżyserI__5090EFD7"];
-            this.relationFK__Filmy__ReżyserId__4CC05EF3 = this.Relations["FK__Filmy__ReżyserId__4CC05EF3"];
-            this.relationFK__Filmy__StatusId__4DB4832C = this.Relations["FK__Filmy__StatusId__4DB4832C"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -325,26 +310,6 @@ namespace Projekt2._0 {
             base.Tables.Add(this.tableTwórca);
             this.tableFilmy = new FilmyDataTable();
             base.Tables.Add(this.tableFilmy);
-            this.relationFK__Serial__ReżyserI__2882FE7D = new global::System.Data.DataRelation("FK__Serial__ReżyserI__2882FE7D", new global::System.Data.DataColumn[] {
-                        this.tableReżyser.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSerial.ReżyserIdColumn}, false);
-            this.Relations.Add(this.relationFK__Serial__ReżyserI__2882FE7D);
-            this.relationFK__Serial__StatusId__297722B6 = new global::System.Data.DataRelation("FK__Serial__StatusId__297722B6", new global::System.Data.DataColumn[] {
-                        this.tableStatus.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSerial.StatusIdColumn}, false);
-            this.Relations.Add(this.relationFK__Serial__StatusId__297722B6);
-            this.relationFK__Serial__ReżyserI__5090EFD7 = new global::System.Data.DataRelation("FK__Serial__ReżyserI__5090EFD7", new global::System.Data.DataColumn[] {
-                        this.tableTwórca.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSerial.ReżyserIdColumn}, false);
-            this.Relations.Add(this.relationFK__Serial__ReżyserI__5090EFD7);
-            this.relationFK__Filmy__ReżyserId__4CC05EF3 = new global::System.Data.DataRelation("FK__Filmy__ReżyserId__4CC05EF3", new global::System.Data.DataColumn[] {
-                        this.tableReżyser.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableFilmy.ReżyserIdColumn}, false);
-            this.Relations.Add(this.relationFK__Filmy__ReżyserId__4CC05EF3);
-            this.relationFK__Filmy__StatusId__4DB4832C = new global::System.Data.DataRelation("FK__Filmy__StatusId__4DB4832C", new global::System.Data.DataColumn[] {
-                        this.tableStatus.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableFilmy.StatusIdColumn}, false);
-            this.Relations.Add(this.relationFK__Filmy__StatusId__4DB4832C);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1032,9 +997,9 @@ namespace Projekt2._0 {
             
             private global::System.Data.DataColumn columnPremiera;
             
-            private global::System.Data.DataColumn columnReżyserId;
+            private global::System.Data.DataColumn columnTwórca;
             
-            private global::System.Data.DataColumn columnStatusId;
+            private global::System.Data.DataColumn columnStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1095,17 +1060,17 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ReżyserIdColumn {
+            public global::System.Data.DataColumn TwórcaColumn {
                 get {
-                    return this.columnReżyserId;
+                    return this.columnTwórca;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn StatusIdColumn {
+            public global::System.Data.DataColumn StatusColumn {
                 get {
-                    return this.columnStatusId;
+                    return this.columnStatus;
                 }
             }
             
@@ -1146,20 +1111,14 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SerialRow AddSerialRow(string Tytuł, System.DateTime Premiera, ReżyserRow parentReżyserRowByFK__Serial__ReżyserI__2882FE7D, StatusRow parentStatusRowByFK__Serial__StatusId__297722B6) {
+            public SerialRow AddSerialRow(string Tytuł, System.DateTime Premiera, string Twórca, string Status) {
                 SerialRow rowSerialRow = ((SerialRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Tytuł,
                         Premiera,
-                        null,
-                        null};
-                if ((parentReżyserRowByFK__Serial__ReżyserI__2882FE7D != null)) {
-                    columnValuesArray[3] = parentReżyserRowByFK__Serial__ReżyserI__2882FE7D[0];
-                }
-                if ((parentStatusRowByFK__Serial__StatusId__297722B6 != null)) {
-                    columnValuesArray[4] = parentStatusRowByFK__Serial__StatusId__297722B6[0];
-                }
+                        Twórca,
+                        Status};
                 rowSerialRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSerialRow);
                 return rowSerialRow;
@@ -1192,8 +1151,8 @@ namespace Projekt2._0 {
                 this.columnID = base.Columns["ID"];
                 this.columnTytuł = base.Columns["Tytuł"];
                 this.columnPremiera = base.Columns["Premiera"];
-                this.columnReżyserId = base.Columns["ReżyserId"];
-                this.columnStatusId = base.Columns["StatusId"];
+                this.columnTwórca = base.Columns["Twórca"];
+                this.columnStatus = base.Columns["Status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1205,10 +1164,10 @@ namespace Projekt2._0 {
                 base.Columns.Add(this.columnTytuł);
                 this.columnPremiera = new global::System.Data.DataColumn("Premiera", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPremiera);
-                this.columnReżyserId = new global::System.Data.DataColumn("ReżyserId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReżyserId);
-                this.columnStatusId = new global::System.Data.DataColumn("StatusId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatusId);
+                this.columnTwórca = new global::System.Data.DataColumn("Twórca", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTwórca);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1220,6 +1179,10 @@ namespace Projekt2._0 {
                 this.columnTytuł.AllowDBNull = false;
                 this.columnTytuł.MaxLength = 100;
                 this.columnPremiera.AllowDBNull = false;
+                this.columnTwórca.AllowDBNull = false;
+                this.columnTwórca.MaxLength = 100;
+                this.columnStatus.AllowDBNull = false;
+                this.columnStatus.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1653,9 +1616,9 @@ namespace Projekt2._0 {
             
             private global::System.Data.DataColumn columnPremiera;
             
-            private global::System.Data.DataColumn columnReżyserId;
+            private global::System.Data.DataColumn columnReżyser;
             
-            private global::System.Data.DataColumn columnStatusId;
+            private global::System.Data.DataColumn columnStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1716,17 +1679,17 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ReżyserIdColumn {
+            public global::System.Data.DataColumn ReżyserColumn {
                 get {
-                    return this.columnReżyserId;
+                    return this.columnReżyser;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn StatusIdColumn {
+            public global::System.Data.DataColumn StatusColumn {
                 get {
-                    return this.columnStatusId;
+                    return this.columnStatus;
                 }
             }
             
@@ -1767,20 +1730,14 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FilmyRow AddFilmyRow(string Tytuł, System.DateTime Premiera, ReżyserRow parentReżyserRowByFK__Filmy__ReżyserId__4CC05EF3, StatusRow parentStatusRowByFK__Filmy__StatusId__4DB4832C) {
+            public FilmyRow AddFilmyRow(string Tytuł, System.DateTime Premiera, string Reżyser, string Status) {
                 FilmyRow rowFilmyRow = ((FilmyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Tytuł,
                         Premiera,
-                        null,
-                        null};
-                if ((parentReżyserRowByFK__Filmy__ReżyserId__4CC05EF3 != null)) {
-                    columnValuesArray[3] = parentReżyserRowByFK__Filmy__ReżyserId__4CC05EF3[0];
-                }
-                if ((parentStatusRowByFK__Filmy__StatusId__4DB4832C != null)) {
-                    columnValuesArray[4] = parentStatusRowByFK__Filmy__StatusId__4DB4832C[0];
-                }
+                        Reżyser,
+                        Status};
                 rowFilmyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFilmyRow);
                 return rowFilmyRow;
@@ -1813,8 +1770,8 @@ namespace Projekt2._0 {
                 this.columnID = base.Columns["ID"];
                 this.columnTytuł = base.Columns["Tytuł"];
                 this.columnPremiera = base.Columns["Premiera"];
-                this.columnReżyserId = base.Columns["ReżyserId"];
-                this.columnStatusId = base.Columns["StatusId"];
+                this.columnReżyser = base.Columns["Reżyser"];
+                this.columnStatus = base.Columns["Status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1826,10 +1783,10 @@ namespace Projekt2._0 {
                 base.Columns.Add(this.columnTytuł);
                 this.columnPremiera = new global::System.Data.DataColumn("Premiera", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPremiera);
-                this.columnReżyserId = new global::System.Data.DataColumn("ReżyserId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReżyserId);
-                this.columnStatusId = new global::System.Data.DataColumn("StatusId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatusId);
+                this.columnReżyser = new global::System.Data.DataColumn("Reżyser", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReżyser);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1841,6 +1798,10 @@ namespace Projekt2._0 {
                 this.columnTytuł.AllowDBNull = false;
                 this.columnTytuł.MaxLength = 100;
                 this.columnPremiera.AllowDBNull = false;
+                this.columnReżyser.AllowDBNull = false;
+                this.columnReżyser.MaxLength = 100;
+                this.columnStatus.AllowDBNull = false;
+                this.columnStatus.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2013,28 +1974,6 @@ namespace Projekt2._0 {
                     this[this.tableReżyser.NazwiskoColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SerialRow[] GetSerialRows() {
-                if ((this.Table.ChildRelations["FK__Serial__ReżyserI__2882FE7D"] == null)) {
-                    return new SerialRow[0];
-                }
-                else {
-                    return ((SerialRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Serial__ReżyserI__2882FE7D"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FilmyRow[] GetFilmyRows() {
-                if ((this.Table.ChildRelations["FK__Filmy__ReżyserId__4CC05EF3"] == null)) {
-                    return new FilmyRow[0];
-                }
-                else {
-                    return ((FilmyRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Filmy__ReżyserId__4CC05EF3"])));
-                }
-            }
         }
         
         /// <summary>
@@ -2070,28 +2009,6 @@ namespace Projekt2._0 {
                 }
                 set {
                     this[this.tableStatus.StatusNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SerialRow[] GetSerialRows() {
-                if ((this.Table.ChildRelations["FK__Serial__StatusId__297722B6"] == null)) {
-                    return new SerialRow[0];
-                }
-                else {
-                    return ((SerialRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Serial__StatusId__297722B6"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FilmyRow[] GetFilmyRows() {
-                if ((this.Table.ChildRelations["FK__Filmy__StatusId__4DB4832C"] == null)) {
-                    return new FilmyRow[0];
-                }
-                else {
-                    return ((FilmyRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Filmy__StatusId__4DB4832C"])));
                 }
             }
         }
@@ -2145,91 +2062,24 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ReżyserId {
+            public string Twórca {
                 get {
-                    try {
-                        return ((int)(this[this.tableSerial.ReżyserIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ReżyserId\' w tabeli \'Serial\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSerial.TwórcaColumn]));
                 }
                 set {
-                    this[this.tableSerial.ReżyserIdColumn] = value;
+                    this[this.tableSerial.TwórcaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int StatusId {
+            public string Status {
                 get {
-                    try {
-                        return ((int)(this[this.tableSerial.StatusIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'StatusId\' w tabeli \'Serial\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSerial.StatusColumn]));
                 }
                 set {
-                    this[this.tableSerial.StatusIdColumn] = value;
+                    this[this.tableSerial.StatusColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ReżyserRow ReżyserRow {
-                get {
-                    return ((ReżyserRow)(this.GetParentRow(this.Table.ParentRelations["FK__Serial__ReżyserI__2882FE7D"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Serial__ReżyserI__2882FE7D"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public StatusRow StatusRow {
-                get {
-                    return ((StatusRow)(this.GetParentRow(this.Table.ParentRelations["FK__Serial__StatusId__297722B6"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Serial__StatusId__297722B6"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TwórcaRow TwórcaRow {
-                get {
-                    return ((TwórcaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Serial__ReżyserI__5090EFD7"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Serial__ReżyserI__5090EFD7"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReżyserIdNull() {
-                return this.IsNull(this.tableSerial.ReżyserIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReżyserIdNull() {
-                this[this.tableSerial.ReżyserIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStatusIdNull() {
-                return this.IsNull(this.tableSerial.StatusIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStatusIdNull() {
-                this[this.tableSerial.StatusIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2277,17 +2127,6 @@ namespace Projekt2._0 {
                 }
                 set {
                     this[this.tableTwórca.NazwiskoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SerialRow[] GetSerialRows() {
-                if ((this.Table.ChildRelations["FK__Serial__ReżyserI__5090EFD7"] == null)) {
-                    return new SerialRow[0];
-                }
-                else {
-                    return ((SerialRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Serial__ReżyserI__5090EFD7"])));
                 }
             }
         }
@@ -2341,80 +2180,24 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ReżyserId {
+            public string Reżyser {
                 get {
-                    try {
-                        return ((int)(this[this.tableFilmy.ReżyserIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ReżyserId\' w tabeli \'Filmy\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableFilmy.ReżyserColumn]));
                 }
                 set {
-                    this[this.tableFilmy.ReżyserIdColumn] = value;
+                    this[this.tableFilmy.ReżyserColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int StatusId {
+            public string Status {
                 get {
-                    try {
-                        return ((int)(this[this.tableFilmy.StatusIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'StatusId\' w tabeli \'Filmy\' to DBNull.", e);
-                    }
+                    return ((string)(this[this.tableFilmy.StatusColumn]));
                 }
                 set {
-                    this[this.tableFilmy.StatusIdColumn] = value;
+                    this[this.tableFilmy.StatusColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ReżyserRow ReżyserRow {
-                get {
-                    return ((ReżyserRow)(this.GetParentRow(this.Table.ParentRelations["FK__Filmy__ReżyserId__4CC05EF3"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Filmy__ReżyserId__4CC05EF3"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public StatusRow StatusRow {
-                get {
-                    return ((StatusRow)(this.GetParentRow(this.Table.ParentRelations["FK__Filmy__StatusId__4DB4832C"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Filmy__StatusId__4DB4832C"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReżyserIdNull() {
-                return this.IsNull(this.tableFilmy.ReżyserIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReżyserIdNull() {
-                this[this.tableFilmy.ReżyserIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStatusIdNull() {
-                return this.IsNull(this.tableFilmy.StatusIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStatusIdNull() {
-                this[this.tableFilmy.StatusIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3381,46 +3164,44 @@ namespace Projekt2._0.masterFilmotekaTableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Tytuł", "Tytuł");
             tableMapping.ColumnMappings.Add("Premiera", "Premiera");
-            tableMapping.ColumnMappings.Add("ReżyserId", "ReżyserId");
-            tableMapping.ColumnMappings.Add("StatusId", "StatusId");
+            tableMapping.ColumnMappings.Add("Twórca", "Twórca");
+            tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Serial] WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ((@IsNull_ReżyserId = 1 AND [ReżyserId] IS NULL) OR ([ReżyserId] = @Original_ReżyserId)) AND ((@IsNull_StatusId = 1 AND [StatusId] IS NULL) OR ([StatusId] = @Original_StatusId)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Serial] WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł)" +
+                " AND ([Premiera] = @Original_Premiera) AND ([Status] = @Original_Status) AND ([T" +
+                "wórca] = @Original_Twórca))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Twórca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twórca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Serial] ([Tytuł], [Premiera], [ReżyserId], [StatusId]) VALUES " +
-                "(@Tytuł, @Premiera, @ReżyserId, @StatusId);\r\nSELECT ID, Tytuł, Premiera, Reżyser" +
-                "Id, StatusId FROM Serial WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Serial] ([Tytuł], [Premiera], [Status], [Twórca]) VALUES (@Tytuł, @P" +
+                "remiera, @Status, @Twórca);\r\nSELECT ID, Tytuł, Premiera, Status, Twórca FROM Ser" +
+                "ial WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Twórca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twórca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Serial] SET [Tytuł] = @Tytuł, [Premiera] = @Premiera, [ReżyserId] = @ReżyserId, [StatusId] = @StatusId WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ((@IsNull_ReżyserId = 1 AND [ReżyserId] IS NULL) OR ([ReżyserId] = @Original_ReżyserId)) AND ((@IsNull_StatusId = 1 AND [StatusId] IS NULL) OR ([StatusId] = @Original_StatusId)));
-SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Serial] SET [Tytuł] = @Tytuł, [Premiera] = @Premiera, [Status] = @Status, [Twórca] = @Twórca WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ([Status] = @Original_Status) AND ([Twórca] = @Original_Twórca));
+SELECT ID, Tytuł, Premiera, Status, Twórca FROM Serial WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Twórca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twórca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Twórca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Twórca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3437,7 +3218,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM dbo.Serial";
+            this._commandCollection[0].CommandText = "SELECT ID, Tytuł, Premiera, Status, Twórca FROM Serial";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3498,7 +3279,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, global::System.Nullable<int> Original_ReżyserId, global::System.Nullable<int> Original_StatusId) {
+        public virtual int Delete(int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Status, string Original_Twórca) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Original_Tytuł");
@@ -3507,21 +3288,17 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Tytuł));
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Premiera));
-            if ((Original_ReżyserId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ReżyserId.Value));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Status));
             }
-            if ((Original_StatusId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_StatusId.Value));
+            if ((Original_Twórca == null)) {
+                throw new global::System.ArgumentNullException("Original_Twórca");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Twórca));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3543,7 +3320,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Tytuł, System.DateTime Premiera, global::System.Nullable<int> ReżyserId, global::System.Nullable<int> StatusId) {
+        public virtual int Insert(string Tytuł, System.DateTime Premiera, string Status, string Twórca) {
             if ((Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Tytuł");
             }
@@ -3551,17 +3328,17 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Tytuł));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Premiera));
-            if ((ReżyserId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ReżyserId.Value));
+            if ((Status == null)) {
+                throw new global::System.ArgumentNullException("Status");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Status));
             }
-            if ((StatusId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(StatusId.Value));
+            if ((Twórca == null)) {
+                throw new global::System.ArgumentNullException("Twórca");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Twórca));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3583,7 +3360,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Tytuł, System.DateTime Premiera, global::System.Nullable<int> ReżyserId, global::System.Nullable<int> StatusId, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, global::System.Nullable<int> Original_ReżyserId, global::System.Nullable<int> Original_StatusId, int ID) {
+        public virtual int Update(string Tytuł, System.DateTime Premiera, string Status, string Twórca, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Status, string Original_Twórca, int ID) {
             if ((Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Tytuł");
             }
@@ -3591,17 +3368,17 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Tytuł));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Premiera));
-            if ((ReżyserId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ReżyserId.Value));
+            if ((Status == null)) {
+                throw new global::System.ArgumentNullException("Status");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Status));
             }
-            if ((StatusId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(StatusId.Value));
+            if ((Twórca == null)) {
+                throw new global::System.ArgumentNullException("Twórca");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Twórca));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
             if ((Original_Tytuł == null)) {
@@ -3611,23 +3388,19 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Tytuł));
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_Premiera));
-            if ((Original_ReżyserId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ReżyserId.Value));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Status));
             }
-            if ((Original_StatusId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_StatusId.Value));
+            if ((Original_Twórca == null)) {
+                throw new global::System.ArgumentNullException("Original_Twórca");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Twórca));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3648,8 +3421,8 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Tytuł, System.DateTime Premiera, global::System.Nullable<int> ReżyserId, global::System.Nullable<int> StatusId, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, global::System.Nullable<int> Original_ReżyserId, global::System.Nullable<int> Original_StatusId) {
-            return this.Update(Tytuł, Premiera, ReżyserId, StatusId, Original_ID, Original_Tytuł, Original_Premiera, Original_ReżyserId, Original_StatusId, Original_ID);
+        public virtual int Update(string Tytuł, System.DateTime Premiera, string Status, string Twórca, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Status, string Original_Twórca) {
+            return this.Update(Tytuł, Premiera, Status, Twórca, Original_ID, Original_Tytuł, Original_Premiera, Original_Status, Original_Twórca, Original_ID);
         }
     }
     
@@ -4124,46 +3897,44 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Serial WHERE (ID = @ID)";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Tytuł", "Tytuł");
             tableMapping.ColumnMappings.Add("Premiera", "Premiera");
-            tableMapping.ColumnMappings.Add("ReżyserId", "ReżyserId");
-            tableMapping.ColumnMappings.Add("StatusId", "StatusId");
+            tableMapping.ColumnMappings.Add("Reżyser", "Reżyser");
+            tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Filmy] WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ((@IsNull_ReżyserId = 1 AND [ReżyserId] IS NULL) OR ([ReżyserId] = @Original_ReżyserId)) AND ((@IsNull_StatusId = 1 AND [StatusId] IS NULL) OR ([StatusId] = @Original_StatusId)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Filmy] WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) " +
+                "AND ([Premiera] = @Original_Premiera) AND ([Reżyser] = @Original_Reżyser) AND ([" +
+                "Status] = @Original_Status))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Filmy] ([Tytuł], [Premiera], [ReżyserId], [StatusId]) VALUES (" +
-                "@Tytuł, @Premiera, @ReżyserId, @StatusId);\r\nSELECT ID, Tytuł, Premiera, ReżyserI" +
-                "d, StatusId FROM Filmy WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Filmy] ([Tytuł], [Premiera], [Reżyser], [Status]) VALUES (@Tytuł, @P" +
+                "remiera, @Reżyser, @Status);\r\nSELECT ID, Tytuł, Premiera, Reżyser, Status FROM F" +
+                "ilmy WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Filmy] SET [Tytuł] = @Tytuł, [Premiera] = @Premiera, [ReżyserId] = @ReżyserId, [StatusId] = @StatusId WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ((@IsNull_ReżyserId = 1 AND [ReżyserId] IS NULL) OR ([ReżyserId] = @Original_ReżyserId)) AND ((@IsNull_StatusId = 1 AND [StatusId] IS NULL) OR ([StatusId] = @Original_StatusId)));
-SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Filmy] SET [Tytuł] = @Tytuł, [Premiera] = @Premiera, [Reżyser] = @Reżyser, [Status] = @Status WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ([Reżyser] = @Original_Reżyser) AND ([Status] = @Original_Status));
+SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReżyserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReżyserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StatusId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4180,7 +3951,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM dbo.Filmy";
+            this._commandCollection[0].CommandText = "SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4241,7 +4012,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, global::System.Nullable<int> Original_ReżyserId, global::System.Nullable<int> Original_StatusId) {
+        public virtual int Delete(int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Reżyser, string Original_Status) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Original_Tytuł");
@@ -4250,21 +4021,17 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Tytuł));
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Premiera));
-            if ((Original_ReżyserId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ReżyserId.Value));
+            if ((Original_Reżyser == null)) {
+                throw new global::System.ArgumentNullException("Original_Reżyser");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Reżyser));
             }
-            if ((Original_StatusId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_StatusId.Value));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Status));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4286,7 +4053,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Tytuł, System.DateTime Premiera, global::System.Nullable<int> ReżyserId, global::System.Nullable<int> StatusId) {
+        public virtual int Insert(string Tytuł, System.DateTime Premiera, string Reżyser, string Status) {
             if ((Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Tytuł");
             }
@@ -4294,17 +4061,17 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Tytuł));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Premiera));
-            if ((ReżyserId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ReżyserId.Value));
+            if ((Reżyser == null)) {
+                throw new global::System.ArgumentNullException("Reżyser");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Reżyser));
             }
-            if ((StatusId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(StatusId.Value));
+            if ((Status == null)) {
+                throw new global::System.ArgumentNullException("Status");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Status));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4326,7 +4093,7 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Tytuł, System.DateTime Premiera, global::System.Nullable<int> ReżyserId, global::System.Nullable<int> StatusId, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, global::System.Nullable<int> Original_ReżyserId, global::System.Nullable<int> Original_StatusId, int ID) {
+        public virtual int Update(string Tytuł, System.DateTime Premiera, string Reżyser, string Status, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Reżyser, string Original_Status, int ID) {
             if ((Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Tytuł");
             }
@@ -4334,17 +4101,17 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Tytuł));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Premiera));
-            if ((ReżyserId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ReżyserId.Value));
+            if ((Reżyser == null)) {
+                throw new global::System.ArgumentNullException("Reżyser");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Reżyser));
             }
-            if ((StatusId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(StatusId.Value));
+            if ((Status == null)) {
+                throw new global::System.ArgumentNullException("Status");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Status));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
             if ((Original_Tytuł == null)) {
@@ -4354,23 +4121,19 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Tytuł));
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_Premiera));
-            if ((Original_ReżyserId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ReżyserId.Value));
+            if ((Original_Reżyser == null)) {
+                throw new global::System.ArgumentNullException("Original_Reżyser");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Reżyser));
             }
-            if ((Original_StatusId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_StatusId.Value));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Status));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4391,8 +4154,8 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Tytuł, System.DateTime Premiera, global::System.Nullable<int> ReżyserId, global::System.Nullable<int> StatusId, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, global::System.Nullable<int> Original_ReżyserId, global::System.Nullable<int> Original_StatusId) {
-            return this.Update(Tytuł, Premiera, ReżyserId, StatusId, Original_ID, Original_Tytuł, Original_Premiera, Original_ReżyserId, Original_StatusId, Original_ID);
+        public virtual int Update(string Tytuł, System.DateTime Premiera, string Reżyser, string Status, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Reżyser, string Original_Status) {
+            return this.Update(Tytuł, Premiera, Reżyser, Status, Original_ID, Original_Tytuł, Original_Premiera, Original_Reżyser, Original_Status, Original_ID);
         }
     }
     
@@ -4599,21 +4362,21 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._twórcaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Twórca.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._twórcaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._serialTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Serial.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._serialTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._twórcaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Twórca.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._twórcaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4652,19 +4415,19 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._twórcaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Twórca.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._twórcaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._serialTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Serial.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._serialTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._twórcaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Twórca.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._twórcaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4694,19 +4457,19 @@ SELECT ID, Tytuł, Premiera, ReżyserId, StatusId FROM Filmy WHERE (ID = @ID)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._serialTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Serial.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._serialTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._twórcaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Twórca.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._twórcaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._serialTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Serial.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._serialTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
