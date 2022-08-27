@@ -51,5 +51,23 @@ namespace Projekt2._0
             System.Windows.Data.CollectionViewSource filmyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("filmyViewSource")));
             filmyViewSource.View.MoveCurrentToFirst();
         }
+
+        private void DodajFilm_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            try
+            {
+                conn.Open();
+                string Query = "insert into Filmy (Tytuł,Premiera,Reżyser,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraDatePicker.DataContext + "','" + this.reżyserTextBox.Text + "','" + this.statusTextBox.Text + "')" ;
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                createCommand.ExecuteNonQuery();
+                MessageBox.Show("Zapisane :D");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

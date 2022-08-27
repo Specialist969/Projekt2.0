@@ -26,7 +26,7 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="DodajFilm" Content="Dodaj Film" HorizontalAlignment="Center" Height="29" Margin="0,196,0,0" VerticalAlignment="Top" Width="315" FontSize="22">
+        <Button x:Name="DodajFilm" Content="Dodaj Film" HorizontalAlignment="Center" Height="29" Margin="0,196,0,0" VerticalAlignment="Top" Width="315" FontSize="22" Click="DodajFilm_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
