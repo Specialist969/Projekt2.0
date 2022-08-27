@@ -62,6 +62,7 @@ namespace Projekt2._0
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
                 MessageBox.Show("Zapisane :D");
+                conn.Close();
             }
             catch (Exception ex)
             {
