@@ -32,5 +32,16 @@ namespace Projekt2._0.Properties {
                 return ((string)(this["Filmotekamaster"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\Local;Initial Catalog=master;Integrated Security=True;Conne" +
+            "ct Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadW" +
+            "rite;MultiSubnetFailover=False")]
+        public string Filmoteka {
+            get {
+                return ((string)(this["Filmoteka"]));
+            }
+        }
     }
 }

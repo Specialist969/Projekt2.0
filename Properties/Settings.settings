@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="Filmoteka" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -22,17 +22,18 @@ namespace Projekt2._0
     {
         public DodawanieFilmu()
         {
-            //SqlConnection sql = new SqlConnection();
-            //sql.ConnectionString = @"Data Source=(localdb)\Local;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-            //SqlCommand cmd = sql.CreateCommand();
-
-            //cmd.Connection = sql;
-
-            //cmd.CommandText = "SELECT * FROM Filmy";
-
+            InitializeComponent();
         }
 
+        public static SqlConnection Get_Local_Connection()
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            if (conn.State != System.Data.ConnectionState.Open) conn.Open();
+
+            return conn;
+
+        }
         private void PowrotFilm_Click(object sender, RoutedEventArgs e)
         {
             Film rej = new Film();
@@ -54,7 +55,8 @@ namespace Projekt2._0
 
         private void DodajFilm_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection conn = new SqlConnection();
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
             try
             {
                 conn.Open();
