@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Film" Height="488" Width="757">
     <Grid Margin="0,0,61,43" Width="821" Height="460.04">
+        <DataGrid x:Name="TablicaFilm" HorizontalAlignment="Left" Height="283" Margin="36,110,0,0" VerticalAlignment="Top" Width="502" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="FilmDodawanie" Content="Button" HorizontalAlignment="Left" Height="24" Margin="36,398,0,0" VerticalAlignment="Top" Width="430"/>
+        <Button x:Name="WrocFilm" Content="Button" HorizontalAlignment="Left" Height="24" Margin="564,398,0,0" VerticalAlignment="Top" Width="127"/>
 
     </Grid>
 </Window>

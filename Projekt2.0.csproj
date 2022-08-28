@@ -110,6 +110,9 @@
     <Compile Include="DodawanieSerial.xaml.cs">
       <DependentUpon>DodawanieSerial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Film.xaml.cs">
+      <DependentUpon>Film.xaml</DependentUpon>
+    </Compile>
     <Compile Include="masterFilmoteka.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,9 +140,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Film.xaml.cs">
-      <DependentUpon>Film.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
