@@ -23,5 +23,21 @@ namespace Projekt2._0
         {
             InitializeComponent();
         }
+
+        private void FilmDodawanie_Click(object sender, RoutedEventArgs e)
+        {
+            DodawanieFilmu rej = new DodawanieFilmu();
+            rej.Show();
+
+            this.Close();
+        }
+
+        private void WrocFilm_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow rej = new MainWindow();
+            rej.Show();
+
+            this.Close();
+        }
     }
 }
