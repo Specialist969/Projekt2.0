@@ -66,10 +66,14 @@ namespace Projekt2._0
             try
             {
                 conn.Open();
-                string QueryTwórca = "insert into Twórca (Imię,Nazwisko) values ('" + this.imięTextBox + "','" + nazwiskoTextBox + "')";
-                string Query = "insert into Serial (Tytuł,Premiera,Twórca,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + QueryTwórca + "','" + this.statusTextBox.Text + "')";
+                string Query = "insert into Serial (Tytuł,Premiera,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + this.statusTextBox.Text + "')";
+                string QueryTwórca = "insert into Twórca (Imię,Nazwisko) values ('" + this.imięTextBox.Text + "','" + nazwiskoTextBox.Text + "')";
+
                 SqlCommand createCommand = new SqlCommand(Query, conn);
+                SqlCommand createCommand1 = new SqlCommand(QueryTwórca, conn);
+
                 createCommand.ExecuteNonQuery();
+                createCommand1.ExecuteNonQuery();
                 MessageBox.Show("Zapisane :D");
                 conn.Close();
             }

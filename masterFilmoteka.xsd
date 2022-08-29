@@ -165,7 +165,7 @@ SELECT ID, Tytuł, Premiera, Twórca, Status FROM Serial WHERE (ID = SCOPE_IDENT
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ID, Tytuł, Premiera, Twórca, Status FROM dbo.Serial</CommandText>
                     <Parameters />
                   </DbCommand>
