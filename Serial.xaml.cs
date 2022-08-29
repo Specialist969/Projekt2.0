@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,27 @@ namespace Projekt2._0
         public Serial()
         {
             InitializeComponent();
+
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "SELECT a.Tytuł,a.Premiera,a.Status,a.Twórca, b.Imię , b.Nazwisko FROM Serial a JOIN Twórca b ON a.Twórca = b.ID\r\n";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                createCommand.ExecuteNonQuery();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(createCommand);
+                DataTable dt = new DataTable("Serial");
+                adapter.Fill(dt);
+                TabelaSerial.ItemsSource = dt.DefaultView;
+                adapter.Update(dt);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void PowrotSerial_Click(object sender, RoutedEventArgs e)
