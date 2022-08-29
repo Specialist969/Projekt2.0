@@ -59,8 +59,17 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Content="Premiera:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <DatePicker x:Name="premieraDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" SelectedDate="{Binding Premiera, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" FirstDayOfWeek="Monday"/>
+            <Grid x:Name="grid6" Grid.Column="1" HorizontalAlignment="Left" Margin="-4,0,0,0" VerticalAlignment="Center" Height="56" Width="223">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Content="Premiera:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="premieraTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Premiera, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            </Grid>
         </Grid>
         <Grid x:Name="grid4" DataContext="{StaticResource filmyViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Height="30" Width="214" Grid.ColumnSpan="2" Margin="122,117,0,0">
             <Grid.ColumnDefinitions>

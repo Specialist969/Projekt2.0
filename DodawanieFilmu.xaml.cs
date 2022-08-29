@@ -60,7 +60,7 @@ namespace Projekt2._0
             try
             {
                 conn.Open();
-                string Query = "insert into Filmy (Tytuł,Premiera,Reżyser,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraDatePicker.Text + "','" + this.reżyserTextBox.Text + "','" + this.statusTextBox.Text + "')" ;
+                string Query = "insert into Filmy (Tytuł,Premiera,Reżyser,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + this.reżyserTextBox.Text + "','" + this.statusTextBox.Text + "')" ;
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
                 MessageBox.Show("Zapisane :D");

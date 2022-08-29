@@ -1730,7 +1730,7 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FilmyRow AddFilmyRow(string Tytuł, System.DateTime Premiera, string Reżyser, string Status) {
+            public FilmyRow AddFilmyRow(string Tytuł, string Premiera, string Reżyser, string Status) {
                 FilmyRow rowFilmyRow = ((FilmyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1781,7 +1781,7 @@ namespace Projekt2._0 {
                 base.Columns.Add(this.columnID);
                 this.columnTytuł = new global::System.Data.DataColumn("Tytuł", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTytuł);
-                this.columnPremiera = new global::System.Data.DataColumn("Premiera", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnPremiera = new global::System.Data.DataColumn("Premiera", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPremiera);
                 this.columnReżyser = new global::System.Data.DataColumn("Reżyser", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReżyser);
@@ -1798,6 +1798,7 @@ namespace Projekt2._0 {
                 this.columnTytuł.AllowDBNull = false;
                 this.columnTytuł.MaxLength = 100;
                 this.columnPremiera.AllowDBNull = false;
+                this.columnPremiera.MaxLength = 100;
                 this.columnReżyser.AllowDBNull = false;
                 this.columnReżyser.MaxLength = 100;
                 this.columnStatus.AllowDBNull = false;
@@ -2169,9 +2170,9 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Premiera {
+            public string Premiera {
                 get {
-                    return ((global::System.DateTime)(this[this.tableFilmy.PremieraColumn]));
+                    return ((string)(this[this.tableFilmy.PremieraColumn]));
                 }
                 set {
                     this[this.tableFilmy.PremieraColumn] = value;
@@ -3902,37 +3903,37 @@ SELECT ID, Tytuł, Premiera, Status, Twórca FROM Serial WHERE (ID = @ID)";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Filmy] WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) " +
-                "AND ([Premiera] = @Original_Premiera) AND ([Reżyser] = @Original_Reżyser) AND ([" +
-                "Status] = @Original_Status))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Filmy] WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_T" +
+                "ytuł) AND ([Premiera] = @Original_Premiera) AND ([Reżyser] = @Original_Reżyser) " +
+                "AND ([Status] = @Original_Status))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Filmy] ([Tytuł], [Premiera], [Reżyser], [Status]) VALUES (@Tytuł, @P" +
-                "remiera, @Reżyser, @Status);\r\nSELECT ID, Tytuł, Premiera, Reżyser, Status FROM F" +
-                "ilmy WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Filmy] ([Tytuł], [Premiera], [Reżyser], [Status]) VALUES (@Tyt" +
+                "uł, @Premiera, @Reżyser, @Status);\r\nSELECT ID, Tytuł, Premiera, Reżyser, Status " +
+                "FROM Filmy WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Filmy] SET [Tytuł] = @Tytuł, [Premiera] = @Premiera, [Reżyser] = @Reżyser, [Status] = @Status WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ([Reżyser] = @Original_Reżyser) AND ([Status] = @Original_Status));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Filmy] SET [Tytuł] = @Tytuł, [Premiera] = @Premiera, [Reżyser] = @Reżyser, [Status] = @Status WHERE (([ID] = @Original_ID) AND ([Tytuł] = @Original_Tytuł) AND ([Premiera] = @Original_Premiera) AND ([Reżyser] = @Original_Reżyser) AND ([Status] = @Original_Status));
 SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Premiera", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tytuł", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tytuł", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Premiera", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Premiera", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reżyser", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reżyser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3951,7 +3952,7 @@ SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy";
+            this._commandCollection[0].CommandText = "SELECT ID, Tytuł, Premiera, Reżyser, Status FROM dbo.Filmy";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4012,7 +4013,7 @@ SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Reżyser, string Original_Status) {
+        public virtual int Delete(int Original_ID, string Original_Tytuł, string Original_Premiera, string Original_Reżyser, string Original_Status) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Original_Tytuł");
@@ -4020,7 +4021,12 @@ SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Tytuł));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Premiera));
+            if ((Original_Premiera == null)) {
+                throw new global::System.ArgumentNullException("Original_Premiera");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Premiera));
+            }
             if ((Original_Reżyser == null)) {
                 throw new global::System.ArgumentNullException("Original_Reżyser");
             }
@@ -4053,14 +4059,19 @@ SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Tytuł, System.DateTime Premiera, string Reżyser, string Status) {
+        public virtual int Insert(string Tytuł, string Premiera, string Reżyser, string Status) {
             if ((Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Tytuł");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Tytuł));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Premiera));
+            if ((Premiera == null)) {
+                throw new global::System.ArgumentNullException("Premiera");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Premiera));
+            }
             if ((Reżyser == null)) {
                 throw new global::System.ArgumentNullException("Reżyser");
             }
@@ -4093,14 +4104,19 @@ SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Tytuł, System.DateTime Premiera, string Reżyser, string Status, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Reżyser, string Original_Status, int ID) {
+        public virtual int Update(string Tytuł, string Premiera, string Reżyser, string Status, int Original_ID, string Original_Tytuł, string Original_Premiera, string Original_Reżyser, string Original_Status, int ID) {
             if ((Tytuł == null)) {
                 throw new global::System.ArgumentNullException("Tytuł");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Tytuł));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Premiera));
+            if ((Premiera == null)) {
+                throw new global::System.ArgumentNullException("Premiera");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Premiera));
+            }
             if ((Reżyser == null)) {
                 throw new global::System.ArgumentNullException("Reżyser");
             }
@@ -4120,7 +4136,12 @@ SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Tytuł));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_Premiera));
+            if ((Original_Premiera == null)) {
+                throw new global::System.ArgumentNullException("Original_Premiera");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Premiera));
+            }
             if ((Original_Reżyser == null)) {
                 throw new global::System.ArgumentNullException("Original_Reżyser");
             }
@@ -4154,7 +4175,7 @@ SELECT ID, Tytuł, Premiera, Reżyser, Status FROM Filmy WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Tytuł, System.DateTime Premiera, string Reżyser, string Status, int Original_ID, string Original_Tytuł, System.DateTime Original_Premiera, string Original_Reżyser, string Original_Status) {
+        public virtual int Update(string Tytuł, string Premiera, string Reżyser, string Status, int Original_ID, string Original_Tytuł, string Original_Premiera, string Original_Reżyser, string Original_Status) {
             return this.Update(Tytuł, Premiera, Reżyser, Status, Original_ID, Original_Tytuł, Original_Premiera, Original_Reżyser, Original_Status, Original_ID);
         }
     }
