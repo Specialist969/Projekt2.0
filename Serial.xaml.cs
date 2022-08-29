@@ -33,7 +33,16 @@ namespace Projekt2._0
             this.Close();
         }
 
-        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            Projekt2._0.masterFilmoteka masterFilmoteka = ((Projekt2._0.masterFilmoteka)(this.FindResource("masterFilmoteka")));
+            // Załaduj dane do tabeli Serial. Możesz modyfikować ten kod w razie potrzeby.
+            Projekt2._0.masterFilmotekaTableAdapters.SerialTableAdapter masterFilmotekaSerialTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.SerialTableAdapter();
+            masterFilmotekaSerialTableAdapter.Fill(masterFilmoteka.Serial);
+            System.Windows.Data.CollectionViewSource serialViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("serialViewSource")));
+            serialViewSource.View.MoveCurrentToFirst();
+        }
 
         private void WstawianieSerial_Click(object sender, RoutedEventArgs e)
         {
@@ -43,6 +52,9 @@ namespace Projekt2._0
             this.Close();
         }
 
-        
+        private void TabelaSerial_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -54,7 +54,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Grid.Column="4" Content="Tytuł:" HorizontalAlignment="Left" Margin="5,11,0,0" Grid.Row="0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Width="90"/>
-            <TextBox x:Name="tytułTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="32,57,0,0" Text="{Binding Tytuł, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="160" FontSize="20" Grid.ColumnSpan="5"/>
+            <TextBox x:Name="tytułTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="18,53,0,0" Text="{Binding Tytuł, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="160" FontSize="20" Grid.ColumnSpan="5"/>
         </Grid>
         <Grid x:Name="grid5" DataContext="{StaticResource filmyViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Margin="50,0,0,0" Height="96" Width="213">
             <Grid.ColumnDefinitions>
@@ -75,8 +75,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Content="Rok Premiery:" HorizontalAlignment="Left" Margin="46,12,0,0" Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="20"/>
-            <TextBox x:Name="premieraTextBox" HorizontalAlignment="Left" Height="NaN" Margin="42,58,0,0" Grid.Row="0" Text="{Binding Premiera, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" FontSize="20"/>
+            <Label Grid.Column="0" Content="Rok Premiery:" HorizontalAlignment="Left" Margin="41,6,0,0" Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="20"/>
+            <TextBox x:Name="premieraTextBox" HorizontalAlignment="Left" Height="NaN" Margin="12,43,0,0" Grid.Row="0" Text="{Binding Premiera, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" FontSize="20"/>
         </Grid>
         <Grid x:Name="grid4" DataContext="{StaticResource reżyserViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="138,120,0,0">
             <Grid.ColumnDefinitions>
@@ -87,7 +87,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
         </Grid>
-        <Grid x:Name="grid6" DataContext="{StaticResource reżyserViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="131,113,0,0">
+        <Grid x:Name="grid6" DataContext="{StaticResource reżyserViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="131,104,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -98,18 +98,19 @@
             <Label Grid.Column="0" Content="Imię:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
             <TextBox x:Name="imięTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Imię, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
-        <Grid x:Name="grid7" DataContext="{StaticResource reżyserViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="138,144,0,0" Grid.ColumnSpan="2">
+        <Grid x:Name="grid7" DataContext="{StaticResource reżyserViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="131,136,0,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="35.908"/>
+                <ColumnDefinition Width="32.869"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Content="Nazwisko:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Grid.Column="0" Content="Nazwisko:" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="nazwiskoTextBox" Grid.Column="2" HorizontalAlignment="Center" Height="NaN" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
-        <Label Grid.Column="1" Content="Reżyser" HorizontalAlignment="Left" Height="26" Margin="111,89,0,0" VerticalAlignment="Top" Width="197"/>
+        <Label Grid.Column="1" Content="Reżyser" HorizontalAlignment="Left" Height="26" Margin="111,80,0,0" VerticalAlignment="Top" Width="197"/>
 
     </Grid>
 </Window>
