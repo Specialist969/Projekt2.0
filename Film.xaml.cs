@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,27 @@ namespace Projekt2._0
         public Film()
         {
             InitializeComponent();
+
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "SELECT a.Tytuł,a.Premiera,a.Status,a.Reżyser, b.Imię , b.Nazwisko FROM Filmy a JOIN Reżyser b ON a.Reżyser = b.ID";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                createCommand.ExecuteNonQuery();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(createCommand);
+                DataTable dt = new DataTable("Filmy");
+                adapter.Fill(dt);
+                TablicaFilm.ItemsSource = dt.DefaultView;
+                adapter.Update(dt);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FilmDodawanie_Click(object sender, RoutedEventArgs e)
