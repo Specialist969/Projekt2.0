@@ -9,6 +9,7 @@
     <Window.Resources>
         <local:masterFilmoteka x:Key="masterFilmoteka"/>
         <CollectionViewSource x:Key="serialViewSource" Source="{Binding Serial, Source={StaticResource masterFilmoteka}}"/>
+        <CollectionViewSource x:Key="twórcaViewSource" Source="{Binding Twórca, Source={StaticResource masterFilmoteka}}"/>
     </Window.Resources>
     <Grid Margin="10,17,10,-34" Height="255.04">
         <Grid.Background>
@@ -55,8 +56,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Content="Twórca:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="twórcaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Twórca, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
         <Grid x:Name="grid4" DataContext="{StaticResource serialViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="836,0,0,0">
             <Grid.ColumnDefinitions>
@@ -69,6 +68,29 @@
             <Label Grid.Column="0" Content="Status:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
             <TextBox x:Name="statusTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
+        <Grid x:Name="grid5" DataContext="{StaticResource twórcaViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="593,107,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="Imię:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="imięTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Imię, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid6" DataContext="{StaticResource twórcaViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="593,139,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="Nazwisko:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Label Content="Twórca" HorizontalAlignment="Left" Height="33" Margin="663,74,0,0" VerticalAlignment="Top" Width="97"/>
 
     </Grid>
 </Window>

@@ -52,6 +52,11 @@ namespace Projekt2._0
             masterFilmotekaSerialTableAdapter.Fill(masterFilmoteka.Serial);
             System.Windows.Data.CollectionViewSource serialViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("serialViewSource")));
             serialViewSource.View.MoveCurrentToFirst();
+            // Załaduj dane do tabeli Twórca. Możesz modyfikować ten kod w razie potrzeby.
+            Projekt2._0.masterFilmotekaTableAdapters.TwórcaTableAdapter masterFilmotekaTwórcaTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.TwórcaTableAdapter();
+            masterFilmotekaTwórcaTableAdapter.Fill(masterFilmoteka.Twórca);
+            System.Windows.Data.CollectionViewSource twórcaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("twórcaViewSource")));
+            twórcaViewSource.View.MoveCurrentToFirst();
         }
 
         private void DodajSerial_Click(object sender, RoutedEventArgs e)
@@ -61,7 +66,9 @@ namespace Projekt2._0
             try
             {
                 conn.Open();
-                string Query = "insert into Serial (Tytuł,Premiera,Twórca,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + this.twórcaTextBox.Text + "','" + this.statusTextBox.Text + "')";
+                
+                string Query = "insert into Serial (Tytuł,Premiera,Twórca,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + this.statusTextBox.Text + "')";
+                string QueryTwórca = "insert into Twórca (Imię,Nazwisko) values ('" + this.imięTextBox + "','" + nazwiskoTextBox + "')";
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
                 MessageBox.Show("Zapisane :D");
@@ -71,6 +78,8 @@ namespace Projekt2._0
             {
                 MessageBox.Show(ex.Message);
             }
+
+
         }
     }
 }

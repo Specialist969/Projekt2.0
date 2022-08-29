@@ -9,6 +9,7 @@
     <Window.Resources>
         <local:masterFilmoteka x:Key="masterFilmoteka"/>
         <CollectionViewSource x:Key="filmyViewSource" Source="{Binding Filmy, Source={StaticResource masterFilmoteka}}"/>
+        <CollectionViewSource x:Key="reżyserViewSource" Source="{Binding Reżyser, Source={StaticResource masterFilmoteka}}"/>
     </Window.Resources>
     <Grid Margin="10,10,10,17">
         <Grid.ColumnDefinitions>
@@ -63,8 +64,31 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Reżyser:" HorizontalAlignment="Left" Margin="10,0,0,39" Grid.Row="0" VerticalAlignment="Bottom" FontSize="20"/>
-            <TextBox x:Name="reżyserTextBox" HorizontalAlignment="Left" Height="NaN" Margin="10,57,0,0" Grid.Row="0" Text="{Binding Reżyser, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="194" FontSize="20" Grid.ColumnSpan="2"/>
+            <Grid x:Name="grid6" DataContext="{StaticResource reżyserViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="11,37,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Content="Imię:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="imięTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Imię, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            </Grid>
+            <Grid x:Name="grid7" DataContext="{StaticResource reżyserViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,71,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="11.908"/>
+                    <ColumnDefinition Width="21"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="15.869"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Content="Nazwisko:" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="4"/>
+                <TextBox x:Name="nazwiskoTextBox" Grid.Column="4" HorizontalAlignment="Center" Height="NaN" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            </Grid>
         </Grid>
         <Grid x:Name="grid5" DataContext="{StaticResource filmyViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Margin="50,0,0,0" Height="96" Width="213">
             <Grid.ColumnDefinitions>

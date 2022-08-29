@@ -51,6 +51,11 @@ namespace Projekt2._0
             masterFilmotekaFilmyTableAdapter.Fill(masterFilmoteka.Filmy);
             System.Windows.Data.CollectionViewSource filmyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("filmyViewSource")));
             filmyViewSource.View.MoveCurrentToFirst();
+            // Załaduj dane do tabeli Reżyser. Możesz modyfikować ten kod w razie potrzeby.
+            Projekt2._0.masterFilmotekaTableAdapters.ReżyserTableAdapter masterFilmotekaReżyserTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.ReżyserTableAdapter();
+            masterFilmotekaReżyserTableAdapter.Fill(masterFilmoteka.Reżyser);
+            System.Windows.Data.CollectionViewSource reżyserViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("reżyserViewSource")));
+            reżyserViewSource.View.MoveCurrentToFirst();
         }
 
         private void DodajFilm_Click(object sender, RoutedEventArgs e)
@@ -61,6 +66,7 @@ namespace Projekt2._0
             {
                 conn.Open();
                 string Query = "insert into Filmy (Tytuł,Premiera,Reżyser,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + this.reżyserTextBox.Text + "','" + this.statusTextBox.Text + "')" ;
+                string Query1 = "insert into Reżyser (Imię,Nazwisko) values ('" + this.imięTextBox + "','" + nazwiskoTextBox + "')";
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
                 MessageBox.Show("Zapisane :D");
