@@ -25,6 +25,16 @@ namespace Projekt2._0
             InitializeComponent();
         }
 
+        public static SqlConnection Get_Local_Connection()
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            if (conn.State != System.Data.ConnectionState.Open) conn.Open();
+
+            return conn;
+
+        }
+
         private void PowrotSerial_Click(object sender, RoutedEventArgs e)
         {
             Serial rej = new Serial();
