@@ -72,6 +72,12 @@ namespace Projekt2._0
             masterFilmotekaFilmyTableAdapter.Fill(masterFilmoteka.Filmy);
             System.Windows.Data.CollectionViewSource filmyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("filmyViewSource")));
             filmyViewSource.View.MoveCurrentToFirst();
+            Projekt2._0.masterFilmotekaTableAdapters.ReżyserTableAdapter masterFilmotekaReżyserTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.ReżyserTableAdapter();
+            masterFilmotekaReżyserTableAdapter.Fill(masterFilmoteka.Reżyser);
+            System.Windows.Data.CollectionViewSource ReżyserViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("reżyserViewSource")));
+            filmyViewSource.View.MoveCurrentToFirst();
+            
+            
         }
     }
 }

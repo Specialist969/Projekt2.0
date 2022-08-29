@@ -9,6 +9,7 @@
     <Window.Resources>
         <local:masterFilmoteka x:Key="masterFilmoteka"/>
         <CollectionViewSource x:Key="filmyViewSource" Source="{Binding Filmy, Source={StaticResource masterFilmoteka}}"/>
+        <CollectionViewSource x:Key="reżyserViewSource" Source="{Binding Reżyser, Source={StaticResource masterFilmoteka}}"/>
     </Window.Resources>
     <Grid Margin="0,0,61,43" Width="821" Height="460.04" DataContext="{StaticResource filmyViewSource}">
         <DataGrid x:Name="TablicaFilm" HorizontalAlignment="Left" Height="283" Margin="36,110,0,0" VerticalAlignment="Top" Width="502" ItemsSource="{Binding}"/>

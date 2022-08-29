@@ -38,6 +38,7 @@ namespace Projekt2._0
                 DataTable dt = new DataTable("Serial");
                 adapter.Fill(dt);
                 TabelaSerial.ItemsSource = dt.DefaultView;
+                
                 adapter.Update(dt);
                 conn.Close();
             }
