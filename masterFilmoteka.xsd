@@ -165,7 +165,7 @@ SELECT ID, Tytuł, Premiera, Twórca, Status FROM Serial WHERE (ID = SCOPE_IDENT
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT ID, Tytuł, Premiera, Twórca, Status FROM dbo.Serial</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -455,8 +455,8 @@ SELECT ID, Imię, Nazwisko FROM Twórca WHERE (ID = @ID)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Filmy__Reżyser__09C96D33" msdata:parent="Reżyser" msdata:child="Filmy" msdata:parentkey="ID" msdata:childkey="Reżyser" msprop:Generator_UserParentTable="Reżyser" msprop:Generator_UserChildTable="Filmy" msprop:Generator_RelationVarName="relationFK__Filmy__Reżyser__09C96D33" msprop:Generator_UserRelationName="FK__Filmy__Reżyser__09C96D33" msprop:Generator_ChildPropName="GetFilmyRows" msprop:Generator_ParentPropName="ReżyserRow" />
-      <msdata:Relationship name="FK__Serial__Twórca__0CA5D9DE" msdata:parent="Twórca" msdata:child="Serial" msdata:parentkey="ID" msdata:childkey="Twórca" msprop:Generator_UserParentTable="Twórca" msprop:Generator_UserChildTable="Serial" msprop:Generator_RelationVarName="relationFK__Serial__Twórca__0CA5D9DE" msprop:Generator_UserRelationName="FK__Serial__Twórca__0CA5D9DE" msprop:Generator_ChildPropName="GetSerialRows" msprop:Generator_ParentPropName="TwórcaRow" />
+      <msdata:Relationship name="FK__Filmy__Reżyser__153B1FDF" msdata:parent="Reżyser" msdata:child="Filmy" msdata:parentkey="ID" msdata:childkey="Reżyser" msprop:Generator_UserParentTable="Reżyser" msprop:Generator_UserChildTable="Filmy" msprop:Generator_RelationVarName="relationFK__Filmy__Reżyser__153B1FDF" msprop:Generator_UserRelationName="FK__Filmy__Reżyser__153B1FDF" msprop:Generator_ChildPropName="GetFilmyRows" msprop:Generator_ParentPropName="ReżyserRow" />
+      <msdata:Relationship name="FK__Serial__Twórca__18178C8A" msdata:parent="Twórca" msdata:child="Serial" msdata:parentkey="ID" msdata:childkey="Twórca" msprop:Generator_UserParentTable="Twórca" msprop:Generator_UserChildTable="Serial" msprop:Generator_RelationVarName="relationFK__Serial__Twórca__18178C8A" msprop:Generator_UserRelationName="FK__Serial__Twórca__18178C8A" msprop:Generator_ChildPropName="GetSerialRows" msprop:Generator_ParentPropName="TwórcaRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

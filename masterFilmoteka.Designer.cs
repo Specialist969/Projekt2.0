@@ -34,9 +34,9 @@ namespace Projekt2._0 {
         
         private TwórcaDataTable tableTwórca;
         
-        private global::System.Data.DataRelation relationFK__Filmy__Reżyser__09C96D33;
+        private global::System.Data.DataRelation relationFK__Filmy__Reżyser__153B1FDF;
         
-        private global::System.Data.DataRelation relationFK__Serial__Twórca__0CA5D9DE;
+        private global::System.Data.DataRelation relationFK__Serial__Twórca__18178C8A;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -294,8 +294,8 @@ namespace Projekt2._0 {
                     this.tableTwórca.InitVars();
                 }
             }
-            this.relationFK__Filmy__Reżyser__09C96D33 = this.Relations["FK__Filmy__Reżyser__09C96D33"];
-            this.relationFK__Serial__Twórca__0CA5D9DE = this.Relations["FK__Serial__Twórca__0CA5D9DE"];
+            this.relationFK__Filmy__Reżyser__153B1FDF = this.Relations["FK__Filmy__Reżyser__153B1FDF"];
+            this.relationFK__Serial__Twórca__18178C8A = this.Relations["FK__Serial__Twórca__18178C8A"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -316,14 +316,14 @@ namespace Projekt2._0 {
             base.Tables.Add(this.tableStatus);
             this.tableTwórca = new TwórcaDataTable();
             base.Tables.Add(this.tableTwórca);
-            this.relationFK__Filmy__Reżyser__09C96D33 = new global::System.Data.DataRelation("FK__Filmy__Reżyser__09C96D33", new global::System.Data.DataColumn[] {
+            this.relationFK__Filmy__Reżyser__153B1FDF = new global::System.Data.DataRelation("FK__Filmy__Reżyser__153B1FDF", new global::System.Data.DataColumn[] {
                         this.tableReżyser.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableFilmy.ReżyserColumn}, false);
-            this.Relations.Add(this.relationFK__Filmy__Reżyser__09C96D33);
-            this.relationFK__Serial__Twórca__0CA5D9DE = new global::System.Data.DataRelation("FK__Serial__Twórca__0CA5D9DE", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Filmy__Reżyser__153B1FDF);
+            this.relationFK__Serial__Twórca__18178C8A = new global::System.Data.DataRelation("FK__Serial__Twórca__18178C8A", new global::System.Data.DataColumn[] {
                         this.tableTwórca.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableSerial.TwórcaColumn}, false);
-            this.Relations.Add(this.relationFK__Serial__Twórca__0CA5D9DE);
+            this.Relations.Add(this.relationFK__Serial__Twórca__18178C8A);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -553,7 +553,7 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FilmyRow AddFilmyRow(string Tytuł, string Premiera, ReżyserRow parentReżyserRowByFK__Filmy__Reżyser__09C96D33, string Status) {
+            public FilmyRow AddFilmyRow(string Tytuł, string Premiera, ReżyserRow parentReżyserRowByFK__Filmy__Reżyser__153B1FDF, string Status) {
                 FilmyRow rowFilmyRow = ((FilmyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -561,8 +561,8 @@ namespace Projekt2._0 {
                         Premiera,
                         null,
                         Status};
-                if ((parentReżyserRowByFK__Filmy__Reżyser__09C96D33 != null)) {
-                    columnValuesArray[3] = parentReżyserRowByFK__Filmy__Reżyser__09C96D33[0];
+                if ((parentReżyserRowByFK__Filmy__Reżyser__153B1FDF != null)) {
+                    columnValuesArray[3] = parentReżyserRowByFK__Filmy__Reżyser__153B1FDF[0];
                 }
                 rowFilmyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFilmyRow);
@@ -1169,7 +1169,7 @@ namespace Projekt2._0 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SerialRow AddSerialRow(string Tytuł, string Premiera, TwórcaRow parentTwórcaRowByFK__Serial__Twórca__0CA5D9DE, string Status) {
+            public SerialRow AddSerialRow(string Tytuł, string Premiera, TwórcaRow parentTwórcaRowByFK__Serial__Twórca__18178C8A, string Status) {
                 SerialRow rowSerialRow = ((SerialRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1177,8 +1177,8 @@ namespace Projekt2._0 {
                         Premiera,
                         null,
                         Status};
-                if ((parentTwórcaRowByFK__Serial__Twórca__0CA5D9DE != null)) {
-                    columnValuesArray[3] = parentTwórcaRowByFK__Serial__Twórca__0CA5D9DE[0];
+                if ((parentTwórcaRowByFK__Serial__Twórca__18178C8A != null)) {
+                    columnValuesArray[3] = parentTwórcaRowByFK__Serial__Twórca__18178C8A[0];
                 }
                 rowSerialRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSerialRow);
@@ -2028,10 +2028,10 @@ namespace Projekt2._0 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ReżyserRow ReżyserRow {
                 get {
-                    return ((ReżyserRow)(this.GetParentRow(this.Table.ParentRelations["FK__Filmy__Reżyser__09C96D33"])));
+                    return ((ReżyserRow)(this.GetParentRow(this.Table.ParentRelations["FK__Filmy__Reżyser__153B1FDF"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Filmy__Reżyser__09C96D33"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Filmy__Reżyser__153B1FDF"]);
                 }
             }
             
@@ -2168,11 +2168,11 @@ namespace Projekt2._0 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public FilmyRow[] GetFilmyRows() {
-                if ((this.Table.ChildRelations["FK__Filmy__Reżyser__09C96D33"] == null)) {
+                if ((this.Table.ChildRelations["FK__Filmy__Reżyser__153B1FDF"] == null)) {
                     return new FilmyRow[0];
                 }
                 else {
-                    return ((FilmyRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Filmy__Reżyser__09C96D33"])));
+                    return ((FilmyRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Filmy__Reżyser__153B1FDF"])));
                 }
             }
         }
@@ -2270,10 +2270,10 @@ namespace Projekt2._0 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TwórcaRow TwórcaRow {
                 get {
-                    return ((TwórcaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Serial__Twórca__0CA5D9DE"])));
+                    return ((TwórcaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Serial__Twórca__18178C8A"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Serial__Twórca__0CA5D9DE"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Serial__Twórca__18178C8A"]);
                 }
             }
             
@@ -2464,11 +2464,11 @@ namespace Projekt2._0 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SerialRow[] GetSerialRows() {
-                if ((this.Table.ChildRelations["FK__Serial__Twórca__0CA5D9DE"] == null)) {
+                if ((this.Table.ChildRelations["FK__Serial__Twórca__18178C8A"] == null)) {
                     return new SerialRow[0];
                 }
                 else {
-                    return ((SerialRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Serial__Twórca__0CA5D9DE"])));
+                    return ((SerialRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Serial__Twórca__18178C8A"])));
                 }
             }
         }
