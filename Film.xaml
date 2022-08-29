@@ -11,7 +11,10 @@
         <CollectionViewSource x:Key="filmyViewSource" Source="{Binding Filmy, Source={StaticResource masterFilmoteka}}"/>
         <CollectionViewSource x:Key="reżyserViewSource" Source="{Binding Reżyser, Source={StaticResource masterFilmoteka}}"/>
     </Window.Resources>
-    <Grid Margin="0,0,61,43" Width="821" Height="460.04" DataContext="{StaticResource filmyViewSource}">
+    <Grid Margin="0,5,-30,-38" DataContext="{StaticResource filmyViewSource}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/kinotło.jpg"/>
+        </Grid.Background>
         <DataGrid x:Name="TablicaFilm" HorizontalAlignment="Left" Height="283" Margin="36,110,0,0" VerticalAlignment="Top" Width="502" ItemsSource="{Binding}"/>
         <Button x:Name="FilmDodawanie" Content="Dodaj nowy Film" HorizontalAlignment="Left" Height="24" Margin="36,398,0,0" VerticalAlignment="Top" Width="430" Click="FilmDodawanie_Click"/>
         <Button x:Name="WrocFilm" Content="Wróć do Głównej" HorizontalAlignment="Left" Height="24" Margin="564,398,0,0" VerticalAlignment="Top" Width="127" Click="WrocFilm_Click"/>
