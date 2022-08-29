@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt2._0"
         mc:Ignorable="d"
-        Title="DodawanieSerial" Height="298" Width="1061">
+        Title="DodawanieSerial" Height="298" Width="1061" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:masterFilmoteka x:Key="masterFilmoteka"/>
+        <CollectionViewSource x:Key="serialViewSource" Source="{Binding Serial, Source={StaticResource masterFilmoteka}}"/>
+    </Window.Resources>
     <Grid Margin="10,17,10,-34" Height="255.04">
         <Grid.Background>
             <ImageBrush ImageSource="/rolkafilm.jpg"/>
@@ -16,11 +20,55 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="DodajSerial" Content="Dodaj Serial" HorizontalAlignment="Left" Height="36" Margin="74,196,0,0" VerticalAlignment="Top" Width="392" FontSize="24">
+        <Button x:Name="DodajSerial" Content="Dodaj Serial" HorizontalAlignment="Left" Height="36" Margin="74,196,0,0" VerticalAlignment="Top" Width="392" FontSize="24" Click="DodajSerial_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
+        <Grid x:Name="grid1" DataContext="{StaticResource serialViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="115,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="Tytuł:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="tytułTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Tytuł, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid2" DataContext="{StaticResource serialViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="354,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="Premiera:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="premieraTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Premiera, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid3" DataContext="{StaticResource serialViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="588,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="Twórca:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="twórcaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Twórca, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid4" DataContext="{StaticResource serialViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="836,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="Status:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="statusTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Status, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
 
     </Grid>
 </Window>

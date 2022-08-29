@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,34 @@ namespace Projekt2._0
             this.Close();
         }
 
-        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            Projekt2._0.masterFilmoteka masterFilmoteka = ((Projekt2._0.masterFilmoteka)(this.FindResource("masterFilmoteka")));
+            // Załaduj dane do tabeli Serial. Możesz modyfikować ten kod w razie potrzeby.
+            Projekt2._0.masterFilmotekaTableAdapters.SerialTableAdapter masterFilmotekaSerialTableAdapter = new Projekt2._0.masterFilmotekaTableAdapters.SerialTableAdapter();
+            masterFilmotekaSerialTableAdapter.Fill(masterFilmoteka.Serial);
+            System.Windows.Data.CollectionViewSource serialViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("serialViewSource")));
+            serialViewSource.View.MoveCurrentToFirst();
+        }
+
+        private void DodajSerial_Click(object sender, RoutedEventArgs e)
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "insert into Serial (Tytuł,Premiera,Twórca,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + this.twórcaTextBox.Text + "','" + this.statusTextBox.Text + "')";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                createCommand.ExecuteNonQuery();
+                MessageBox.Show("Zapisane :D");
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
