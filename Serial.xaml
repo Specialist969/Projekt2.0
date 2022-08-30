@@ -26,8 +26,8 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Height="34" Margin="683,334,0,0" VerticalAlignment="Top" Width="128"/>
-        <TextBox x:Name="TexboxStatus" HorizontalAlignment="Left" Height="31" Margin="683,283,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="UpgradeSerial" Content="Zaktualizuj Status" HorizontalAlignment="Left" Height="34" Margin="683,334,0,0" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="TexboxStatus" HorizontalAlignment="Left" Height="31" Margin="683,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
         <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Height="31" Margin="683,117,0,0" VerticalAlignment="Top" Width="128" SelectionChanged="ComboBox_SelectionChanged"/>
 
     </Grid>
