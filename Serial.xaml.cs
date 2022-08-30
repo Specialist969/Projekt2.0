@@ -79,5 +79,34 @@ namespace Projekt2._0
         {
             
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "SELECT * FROM Serial WHERE Tytuł='" + ComboBox.Text + "' ";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                SqlDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string ID = dr.GetString(0).ToString();
+                    string Tytuł = dr.GetString(1);
+                    string Premiera = dr.GetString(2);
+                    string Twórca = dr.GetString(3).ToString();
+                    string Status = dr.GetString(4);
+
+                    TexboxStatus.Text = Status;
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
