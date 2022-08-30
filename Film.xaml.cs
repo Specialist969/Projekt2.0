@@ -104,5 +104,30 @@ namespace Projekt2._0
             
             
         }
+
+        private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "SELECT * FROM Filmy WHERE Tytuł='" + Combobox.Text + "' ";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                SqlDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string Status = dr.GetString(4);
+
+                    textboxstatus.Text = Status;
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
