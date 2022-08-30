@@ -117,10 +117,6 @@ namespace Projekt2._0
                 SqlDataReader dr = createCommand.ExecuteReader();
                 while (dr.Read())
                 {
-                    string ID = dr.GetString(0).ToString();
-                    string Tytuł = dr.GetString(1);
-                    string Premiera = dr.GetString(2);
-                    string Twórca = dr.GetString(3).ToString();
                     string Status = dr.GetString(4);
 
                     TexboxStatus.Text = Status;
