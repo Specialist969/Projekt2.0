@@ -14,21 +14,23 @@
         <Grid.Background>
             <ImageBrush ImageSource="/scianatło.jpg"/>
         </Grid.Background>
-        <Label x:Name="TytulSerial" Content="Może jakiś serial ?" HorizontalAlignment="Left" Height="84" Margin="144,10,0,0" VerticalAlignment="Top" Width="420" FontSize="48" FontWeight="Bold"/>
-        <DataGrid x:Name="TabelaSerial" HorizontalAlignment="Left" Height="295" Margin="27,115,0,0" VerticalAlignment="Top" Width="633" ItemsSource="{Binding}" SelectionChanged="TabelaSerial_SelectionChanged"/>
-        <Button x:Name="PowrotSerial" Content="Może jednak film ?" HorizontalAlignment="Left" Height="20" Margin="638,414,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Click="PowrotSerial_Click">
+        <Label x:Name="TytulSerial1" Content="Może jakiś serial ?" HorizontalAlignment="Left" Height="84" Margin="144,10,0,0" VerticalAlignment="Top" Width="420" FontSize="48" FontWeight="Bold"/>
+        <DataGrid x:Name="TabelaSerial1" HorizontalAlignment="Left" Height="295" Margin="27,115,0,0" VerticalAlignment="Top" Width="633" ItemsSource="{Binding}" SelectionChanged="TabelaSerial_SelectionChanged"/>
+        <Button x:Name="PowrotSerial1" Content="Może jednak film ?" HorizontalAlignment="Left" Height="20" Margin="638,414,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" Click="PowrotSerial_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="WstawianieSerial" Content="Tutaj możesz dodać nowy serial " HorizontalAlignment="Left" Height="29" Margin="79,410,0,0" VerticalAlignment="Top" Width="375" FontWeight="Bold" FontSize="18" Click="WstawianieSerial_Click">
+        <Button x:Name="WstawianieSerial1" Content="Tutaj możesz dodać nowy serial " HorizontalAlignment="Left" Height="29" Margin="79,410,0,0" VerticalAlignment="Top" Width="375" FontWeight="Bold" FontSize="18" Click="WstawianieSerial_Click">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button x:Name="UpgradeSerial" Content="Zaktualizuj Status" HorizontalAlignment="Left" Height="34" Margin="683,334,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.5,0.5" Click="UpgradeSerial_Click"/>
-        <TextBox x:Name="TexboxStatus" HorizontalAlignment="Left" Height="31" Margin="683,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
-        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Height="31" Margin="683,117,0,0" VerticalAlignment="Top" Width="128" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Button x:Name="UpgradeSerial1" Content="Zaktualizuj Status" HorizontalAlignment="Left" Height="34" Margin="683,334,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.5,0.5" Click="UpgradeSerial_Click"/>
+        <TextBox x:Name="txtTytul" HorizontalAlignment="Left" Height="20" Margin="683,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="txtPremiera" HorizontalAlignment="Left" Height="20" Margin="683,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="20" Margin="683,165,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="128"/>
+        <Label x:Name="txtID" Content="Label" HorizontalAlignment="Left" Margin="736,84,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

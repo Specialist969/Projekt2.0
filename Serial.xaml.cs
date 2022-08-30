@@ -24,21 +24,21 @@ namespace Projekt2._0
         public Serial()
         {
             InitializeComponent();
-            combo();
+            
 
             string cn_String = Properties.Settings.Default.Filmotekamaster;
             SqlConnection conn = new SqlConnection(cn_String);
             try
             {
                 conn.Open();
-                string Query = "SELECT a.Tytuł,a.Premiera,a.Status,a.Twórca, b.Imię , b.Nazwisko FROM Serial a JOIN Twórca b ON a.Twórca = b.ID\r\n";
+                string Query = "SELECT a.Id,a.Tytuł,a.Premiera,a.Status,a.Twórca, b.Imię , b.Nazwisko FROM Serial a JOIN Twórca b ON a.Twórca = b.ID\r\n";
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(createCommand);
                 DataTable dt = new DataTable("Serial");
                 adapter.Fill(dt);
-                TabelaSerial.ItemsSource = dt.DefaultView;
+                TabelaSerial1.ItemsSource = dt.DefaultView;
                 
                 adapter.Update(dt);
                 conn.Close();
@@ -49,29 +49,7 @@ namespace Projekt2._0
             }
         }
 
-        void combo()
-        {
-            string cn_String = Properties.Settings.Default.Filmotekamaster;
-            SqlConnection conn = new SqlConnection(cn_String);
-            try
-            {
-                conn.Open();
-                string Query = "SELECT * FROM Serial ";
-                SqlCommand createCommand = new SqlCommand(Query, conn);
-                SqlDataReader dr = createCommand.ExecuteReader();
-                while (dr.Read())
-                {
-                    string tytul = dr.GetString(1);
-                    ComboBox.Items.Add(tytul);
-                }
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void PowrotSerial_Click(object sender, RoutedEventArgs e)
         {
@@ -102,44 +80,33 @@ namespace Projekt2._0
 
         private void TabelaSerial_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string cn_String = Properties.Settings.Default.Filmotekamaster;
-            SqlConnection conn = new SqlConnection(cn_String);
-            try
+            DataGrid dg = (DataGrid)sender;
+            DataRowView drv = dg.SelectedItem as DataRowView;
+            if (drv != null)
             {
-                conn.Open();
-                string Query = "SELECT * FROM Serial WHERE Tytuł='" + ComboBox.Text + "' ";
-                SqlCommand createCommand = new SqlCommand(Query, conn);
-                SqlDataReader dr = createCommand.ExecuteReader();
-                while (dr.Read())
-                {
-                    string Status = dr.GetString(4);
-
-                    TexboxStatus.Text = Status;
-                }
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                txtID.Content = drv["ID"].ToString();
+                txtTytul.Text = drv["Tytuł"].ToString();
+                txtPremiera.Text = drv["Premiera"].ToString();
+                txtStatus.Text = drv["Status"].ToString();
             }
         }
 
         private void UpgradeSerial_Click(object sender, RoutedEventArgs e)
         {
+            //StatusSerial rej = new StatusSerial();
+            //rej.Show();
+
+            //this.Close();
             string cn_String = Properties.Settings.Default.Filmotekamaster;
             SqlConnection conn = new SqlConnection(cn_String);
             try
             {
                 conn.Open();
-                string Query = "UPDATE Serial SET Status='" + this.TexboxStatus.Text + "' ";
+                string Query = "UPDATE Serial SET Tytuł='" + this.txtTytul.Text + "',Premiera='" + this.txtPremiera.Text + "',Status='" + this.txtStatus.Text + "' WHERE ID='" + this.txtID.Content + "' ";
+
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
+                
                 MessageBox.Show("Zmieniony Status");
                 conn.Close();
             }
@@ -147,6 +114,13 @@ namespace Projekt2._0
             {
                 MessageBox.Show(ex.Message);
             }
+
+            TabelaSerial1.Items.Refresh();
+
+
+
+
+
         }
     }
 }

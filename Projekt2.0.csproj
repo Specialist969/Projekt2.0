@@ -121,6 +121,9 @@
     <Compile Include="Serial.xaml.cs">
       <DependentUpon>Serial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StatusSerial.xaml.cs">
+      <DependentUpon>StatusSerial.xaml</DependentUpon>
+    </Compile>
     <Page Include="DodawanieFilmu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +149,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Serial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatusSerial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
