@@ -24,6 +24,7 @@ namespace Projekt2._0
         public Film()
         {
             InitializeComponent();
+            combo();
 
             string cn_String = Properties.Settings.Default.Filmotekamaster;
             SqlConnection conn = new SqlConnection(cn_String);
@@ -39,6 +40,30 @@ namespace Projekt2._0
                 adapter.Fill(dt);
                 TablicaFilm.ItemsSource = dt.DefaultView;
                 adapter.Update(dt);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void combo()
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "SELECT * FROM Filmy ";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                SqlDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string tytul = dr.GetString(1);
+                    Combobox.Items.Add(tytul);
+                }
+
                 conn.Close();
             }
             catch (Exception ex)
