@@ -24,6 +24,7 @@ namespace Projekt2._0
         public Serial()
         {
             InitializeComponent();
+            combo();
 
             string cn_String = Properties.Settings.Default.Filmotekamaster;
             SqlConnection conn = new SqlConnection(cn_String);
@@ -40,6 +41,30 @@ namespace Projekt2._0
                 TabelaSerial.ItemsSource = dt.DefaultView;
                 
                 adapter.Update(dt);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void combo()
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "SELECT * FROM Serial ";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                SqlDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string tytul = dr.GetString(1);
+                    ComboBox.Items.Add(tytul);
+                }
+
                 conn.Close();
             }
             catch (Exception ex)
