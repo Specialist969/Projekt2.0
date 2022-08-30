@@ -129,5 +129,24 @@ namespace Projekt2._0
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void UpgradeFilm_Click(object sender, RoutedEventArgs e)
+        {
+            string cn_String = Properties.Settings.Default.Filmotekamaster;
+            SqlConnection conn = new SqlConnection(cn_String);
+            try
+            {
+                conn.Open();
+                string Query = "UPDATE Filmy SET Status='" + this.textboxstatus.Text + "' ";
+                SqlCommand createCommand = new SqlCommand(Query, conn);
+                createCommand.ExecuteNonQuery();
+                MessageBox.Show("Zmieniony Status");
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
