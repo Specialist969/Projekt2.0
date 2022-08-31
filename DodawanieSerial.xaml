@@ -47,6 +47,17 @@
             </Grid.RowDefinitions>
             <Label Grid.Column="0" Content="Rok Premiery Pierwszego Sezonu:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
             <TextBox x:Name="premieraTextBox" HorizontalAlignment="Left" Height="NaN" Margin="40,52,0,0" Grid.Row="0" Text="{Binding Premiera, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top" Width="120"/>
+            <Grid x:Name="grid8" DataContext="{StaticResource twórcaViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,1,0,0" Width="81" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Content="ID:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="iDTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="3,0,0,0" Grid.Row="0" Text="{Binding ID, Mode=OneWay}" VerticalAlignment="Center" Width="30"/>
+            </Grid>
         </Grid>
         <Grid x:Name="grid3" DataContext="{StaticResource serialViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="588,0,0,0">
             <Grid.ColumnDefinitions>
@@ -91,7 +102,17 @@
             <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
         <Label Content="Twórca" HorizontalAlignment="Left" Height="33" Margin="663,74,0,0" VerticalAlignment="Top" Width="97"/>
-        <Label x:Name="Idserial" Content="Label" HorizontalAlignment="Left" Height="37" Margin="37,107,0,0" VerticalAlignment="Top" Width="35"/>
+        <Grid x:Name="grid7" DataContext="{StaticResource serialViewSource}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,90,0,0" Height="81">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="ID:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="iDTextBox" HorizontalAlignment="Left" Height="18" Margin="0,40,0,0" Grid.Row="0" Text="{Binding ID, Mode=OneWay}" VerticalAlignment="Top" Width="38"/>
+        </Grid>
 
     </Grid>
 </Window>
