@@ -66,8 +66,8 @@ namespace Projekt2._0
             try
             {
                 conn.Open();
-                string Query = "insert into Serial (ID,Tytuł,Premiera,Twórca,Status) values ('" + iDTextBox.Text + "','" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + iDTextBox1.Text + "','" + this.statusTextBox.Text + "')";
-                string QueryTwórca = "insert into Twórca (Imię,Nazwisko) values ('" + iDTextBox1.Text + "','" + this.imięTextBox.Text + "','" + nazwiskoTextBox.Text + "')";
+                string Query = "insert into Serial (Tytuł,Premiera,Twórca,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + iDTextBox1.Text + "','" + this.statusTextBox.Text + "')";
+                string QueryTwórca = "insert into Twórca (ID,Imię,Nazwisko) values ('" + iDTextBox1.Text + "','" + this.imięTextBox.Text + "','" + nazwiskoTextBox.Text + "')";
 
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 SqlCommand createCommand1 = new SqlCommand(QueryTwórca, conn);
