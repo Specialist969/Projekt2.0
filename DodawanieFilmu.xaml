@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="DodawanieFilmu" Height="298" Width="1061" Loaded="TloGlowne_Loaded">
     <Window.Resources>
-        <local:masterFilmoteka x:Key="masterFilmoteka"/>
+        <local:masterFilmoteka x:Key="masterFilmoteka" Locale="pl-PL"/>
         <CollectionViewSource x:Key="filmyViewSource" Source="{Binding Filmy, Source={StaticResource masterFilmoteka}}"/>
         <CollectionViewSource x:Key="reżyserViewSource" Source="{Binding Reżyser, Source={StaticResource masterFilmoteka}}"/>
     </Window.Resources>
-    <Grid Margin="10,10,10,17">
+    <Grid Margin="10,10,10,17" DataContext="{StaticResource reżyserViewSource}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="447*"/>
             <ColumnDefinition Width="298*"/>
@@ -110,7 +110,17 @@
             <Label Grid.Column="0" Content="Nazwisko:" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
             <TextBox x:Name="nazwiskoTextBox" Grid.Column="2" HorizontalAlignment="Center" Height="NaN" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
-        <Label Grid.Column="1" Content="Reżyser" HorizontalAlignment="Left" Height="26" Margin="111,80,0,0" VerticalAlignment="Top" Width="197"/>
+        <Grid x:Name="grid8" Grid.Column="1" HorizontalAlignment="Left" Margin="138,80,0,0" VerticalAlignment="Top" Width="87">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Content="ID:" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="iDTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="3,0,0,0" Grid.Row="0" Text="{Binding ID, Mode=OneWay}" VerticalAlignment="Center" Width="41"/>
+        </Grid>
 
     </Grid>
 </Window>

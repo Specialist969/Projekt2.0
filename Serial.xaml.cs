@@ -93,10 +93,7 @@ namespace Projekt2._0
 
         private void UpgradeSerial_Click(object sender, RoutedEventArgs e)
         {
-            //StatusSerial rej = new StatusSerial();
-            //rej.Show();
-
-            //this.Close();
+            
             string cn_String = Properties.Settings.Default.Filmotekamaster;
             SqlConnection conn = new SqlConnection(cn_String);
             try

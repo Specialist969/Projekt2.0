@@ -66,8 +66,8 @@ namespace Projekt2._0
             {
                 conn.Open();
 
-                string Query = "insert into Filmy (Tytuł,Premiera,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + this.statusTextBox.Text + "')" ;
-                string Query1 = "insert into Reżyser (Imię,Nazwisko) values ('" + this.imięTextBox.Text + "','" + nazwiskoTextBox.Text + "')";
+                string Query = "insert into Filmy (Tytuł,Premiera,Reżyser,Status) values ('" + this.tytułTextBox.Text + "','" + this.premieraTextBox.Text + "','" + iDTextBox.Text + "','" + this.statusTextBox.Text + "')" ;
+                string Query1 = "insert into Reżyser (ID,Imię,Nazwisko) values ('" + iDTextBox.Text + "','" + this.imięTextBox.Text + "','" + nazwiskoTextBox.Text + "')";
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 SqlCommand createCommand1 = new SqlCommand(Query1, conn);
 
