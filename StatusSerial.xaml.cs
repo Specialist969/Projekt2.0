@@ -63,8 +63,8 @@ namespace Projekt2._0
                 SqlDataReader dr = createCommand.ExecuteReader();
                 while (dr.Read())
                 {
-                    string Imię = dr.GetString(1);
-                    ComboboxTworca.Items.Add(Imię);
+                    string Nazwisko = dr.GetString(2);
+                    ComboboxTworca.Items.Add(Nazwisko);
                     
                 }
 

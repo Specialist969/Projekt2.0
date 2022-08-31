@@ -24,7 +24,7 @@ namespace Projekt2._0
         public Film()
         {
             InitializeComponent();
-            combo();
+            
 
             string cn_String = Properties.Settings.Default.Filmotekamaster;
             SqlConnection conn = new SqlConnection(cn_String);
@@ -48,29 +48,6 @@ namespace Projekt2._0
             }
         }
 
-        void combo()
-        {
-            string cn_String = Properties.Settings.Default.Filmotekamaster;
-            SqlConnection conn = new SqlConnection(cn_String);
-            try
-            {
-                conn.Open();
-                string Query = "SELECT * FROM Filmy ";
-                SqlCommand createCommand = new SqlCommand(Query, conn);
-                SqlDataReader dr = createCommand.ExecuteReader();
-                while (dr.Read())
-                {
-                    string tytul = dr.GetString(1);
-                    Combobox.Items.Add(tytul);
-                }
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         private void FilmDodawanie_Click(object sender, RoutedEventArgs e)
         {
@@ -105,30 +82,7 @@ namespace Projekt2._0
             
         }
 
-        private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string cn_String = Properties.Settings.Default.Filmotekamaster;
-            SqlConnection conn = new SqlConnection(cn_String);
-            try
-            {
-                conn.Open();
-                string Query = "SELECT * FROM Filmy WHERE Tytuł='" + Combobox.Text + "' ";
-                SqlCommand createCommand = new SqlCommand(Query, conn);
-                SqlDataReader dr = createCommand.ExecuteReader();
-                while (dr.Read())
-                {
-                    string Status = dr.GetString(4);
-
-                    textboxstatus.Text = Status;
-                }
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void UpgradeFilm_Click(object sender, RoutedEventArgs e)
         {
@@ -137,15 +91,32 @@ namespace Projekt2._0
             try
             {
                 conn.Open();
-                string Query = "UPDATE Filmy SET Status='" + this.textboxstatus.Text + "' ";
+                string Query = "UPDATE Filmy SET Tytuł='" + this.txtTytul.Text + "',Premiera='" + this.txtPremiera.Text + "',Status='" + this.txtStatus.Text + "' WHERE ID='" + this.txtID.Content + "' ";
+
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
+
                 MessageBox.Show("Zmieniony Status");
                 conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+
+            TablicaFilm.Items.Refresh();
+        }
+
+        private void TablicaFilm_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dg = (DataGrid)sender;
+            DataRowView drv = dg.SelectedItem as DataRowView;
+            if (drv != null)
+            {
+                txtID.Content = drv["ID"].ToString();
+                txtTytul.Text = drv["Tytuł"].ToString();
+                txtPremiera.Text = drv["Premiera"].ToString();
+                txtStatus.Text = drv["Status"].ToString();
             }
         }
     }
