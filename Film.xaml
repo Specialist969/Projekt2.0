@@ -20,10 +20,10 @@
         <Button x:Name="WrocFilm" Content="Wróć do Głównej" HorizontalAlignment="Left" Height="24" Margin="564,398,0,0" VerticalAlignment="Top" Width="127" Click="WrocFilm_Click"/>
         <Label x:Name="TytulFilm" Content="Może jakiś Film ?" HorizontalAlignment="Left" Height="59" Margin="228,28,0,0" VerticalAlignment="Top" Width="310" FontSize="36" FontWeight="Bold"/>
         <Button x:Name="UpgradeFilm" Content="Zaktualizuj Status" HorizontalAlignment="Left" Height="34" Margin="614,328,0,0" VerticalAlignment="Top" Width="160" Click="UpgradeFilm_Click"/>
-        <Label x:Name="txtID" Content="Label" HorizontalAlignment="Left" Height="33" Margin="740,87,0,0" VerticalAlignment="Top" Width="34"/>
-        <TextBox x:Name="txtTytul" HorizontalAlignment="Left" Height="27" Margin="614,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtPremiera" HorizontalAlignment="Left" Height="27" Margin="614,166,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="28" Margin="614,224,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160"/>
+        <Label x:Name="txtID" Content="" HorizontalAlignment="Left" Height="33" Margin="740,87,0,0" VerticalAlignment="Top" Width="34"/>
+        <TextBox x:Name="txtTytul" HorizontalAlignment="Left" Height="27" Margin="614,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtPremiera" HorizontalAlignment="Left" Height="27" Margin="614,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="28" Margin="614,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
 
     </Grid>
 </Window>

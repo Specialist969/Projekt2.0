@@ -91,7 +91,7 @@
             <TextBox x:Name="nazwiskoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="NaN" Margin="3" Grid.Row="0" Text="{Binding Nazwisko, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
         <Label Content="Twórca" HorizontalAlignment="Left" Height="33" Margin="663,74,0,0" VerticalAlignment="Top" Width="97"/>
-        <Label x:Name="Idserial" Content="Label" HorizontalAlignment="Left" Height="21" Margin="37,123,0,0" VerticalAlignment="Top" Width="35"/>
+        <Label x:Name="Idserial" Content="Label" HorizontalAlignment="Left" Height="37" Margin="37,107,0,0" VerticalAlignment="Top" Width="35"/>
 
     </Grid>
 </Window>

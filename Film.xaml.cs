@@ -31,7 +31,7 @@ namespace Projekt2._0
             try
             {
                 conn.Open();
-                string Query = "SELECT a.Tytuł,a.Premiera,a.Status,a.Reżyser, b.Imię , b.Nazwisko FROM Filmy a JOIN Reżyser b ON a.Reżyser = b.ID";
+                string Query = "SELECT a.ID,a.Tytuł,a.Premiera,a.Status,a.Reżyser, b.Imię , b.Nazwisko FROM Filmy a JOIN Reżyser b ON a.Reżyser = b.ID";
                 SqlCommand createCommand = new SqlCommand(Query, conn);
                 createCommand.ExecuteNonQuery();
 
